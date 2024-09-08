@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2701660519006346486
+--- !u!1001 &6934842326951854288
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,63 +8,63 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1031716752363255968, guid: d35e738ce05b84b42afbdc90dbce1958,
+    - target: {fileID: 4627879946457420122, guid: 04446edc3fdb7cf4280feb76eb945d80,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1031716752363255968, guid: d35e738ce05b84b42afbdc90dbce1958,
+    - target: {fileID: 4627879946457420122, guid: 04446edc3fdb7cf4280feb76eb945d80,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1031716752363255968, guid: d35e738ce05b84b42afbdc90dbce1958,
+    - target: {fileID: 4627879946457420122, guid: 04446edc3fdb7cf4280feb76eb945d80,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1031716752363255968, guid: d35e738ce05b84b42afbdc90dbce1958,
+    - target: {fileID: 4627879946457420122, guid: 04446edc3fdb7cf4280feb76eb945d80,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1031716752363255968, guid: d35e738ce05b84b42afbdc90dbce1958,
+    - target: {fileID: 4627879946457420122, guid: 04446edc3fdb7cf4280feb76eb945d80,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1031716752363255968, guid: d35e738ce05b84b42afbdc90dbce1958,
+    - target: {fileID: 4627879946457420122, guid: 04446edc3fdb7cf4280feb76eb945d80,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1031716752363255968, guid: d35e738ce05b84b42afbdc90dbce1958,
+    - target: {fileID: 4627879946457420122, guid: 04446edc3fdb7cf4280feb76eb945d80,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1031716752363255968, guid: d35e738ce05b84b42afbdc90dbce1958,
+    - target: {fileID: 4627879946457420122, guid: 04446edc3fdb7cf4280feb76eb945d80,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1031716752363255968, guid: d35e738ce05b84b42afbdc90dbce1958,
+    - target: {fileID: 4627879946457420122, guid: 04446edc3fdb7cf4280feb76eb945d80,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1031716752363255968, guid: d35e738ce05b84b42afbdc90dbce1958,
+    - target: {fileID: 4627879946457420122, guid: 04446edc3fdb7cf4280feb76eb945d80,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3072932639766385609, guid: d35e738ce05b84b42afbdc90dbce1958,
+    - target: {fileID: 6322456044045497753, guid: 04446edc3fdb7cf4280feb76eb945d80,
         type: 3}
       propertyPath: m_Name
-      value: W_ST_BOTTOM_GEMCAVE_L.001
+      value: W_ST_BOTTOM_CAVE_R
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d35e738ce05b84b42afbdc90dbce1958, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 04446edc3fdb7cf4280feb76eb945d80, type: 3}
