@@ -1,0 +1,20 @@
+{
+    "name": "CarbideFunction.Wildtile.Examples.LevelEditor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:26b25e4701d411949b61014aaf7d94e1",
+        "GUID:80e538dff67b45449998bdc445065738",
+        "GUID:8e2f60e98333692458ea898c5bbf3dd0",
+        "GUID:be39fb9d45fef954c8dbc113dc4b06f8",
+        "GUID:9d3e7b4a1512d394e9e59ea6bf1b75f7"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

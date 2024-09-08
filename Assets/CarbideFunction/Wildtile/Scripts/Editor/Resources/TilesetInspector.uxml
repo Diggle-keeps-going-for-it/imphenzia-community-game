@@ -1,0 +1,27 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement style="flex-grow: 1;">
+        <uie:ObjectField label="Tileset" type="CarbideFunction.Wildtile.TilesetImporterAsset, CarbideFunction.Wildtile" name="config" />
+        <ui:Button text="Reimport" display-tooltip-when-elided="true" name="reimport" />
+        <ui:Button text="Refresh" display-tooltip-when-elided="true" name="force-refresh" />
+        <ui:ListView focusable="true" name="modules" show-border="true" style="height: 200px; max-height: 200px; flex-shrink: 0;" />
+        <ui:DropdownField label="Inspection mode" index="0" choices="Filled by code" name="inspection-mode" />
+        <ui:VisualElement name="connections-box" style="display: flex; flex-grow: 1;">
+            <ui:DropdownField label="Side" index="0" choices="Filled by code" name="direction" />
+            <ui:DropdownField label="Elements" index="0" choices="Filled by code" name="element-validity" />
+            <ui:ListView name="connected-modules" show-border="true" focusable="true" style="flex-grow: 1;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="vertex-contents-box" style="display: flex;">
+            <ui:DropdownField label="Vertex" index="0" choices="Filled by code" name="vertex" />
+            <ui:TextField picking-mode="Ignore" label="Cached status" value="Status" text="Filled" name="cached-status" readonly="true" />
+            <ui:TextField picking-mode="Ignore" label="Calculated status" value="Status" text="Filled" name="calculated-status" readonly="true" tooltip="If this is different from the cached status then the asset is out of date. Reimporting the marching cubes will fix this." />
+            <ui:IMGUIContainer name="settings" />
+        </ui:VisualElement>
+        <ui:VisualElement name="tri-on-module-face-box" style="display: flex;">
+            <ui:GroupBox text="Highlight controls">
+                <ui:Slider picking-mode="Ignore" label="Offset from face" value="0" name="normal-offset" high-value="1" />
+                <ui:Slider picking-mode="Ignore" label="Border width" value="0.01" high-value="0.1" name="border-width" />
+            </ui:GroupBox>
+        </ui:VisualElement>
+        <ui:VisualElement name="outside-bounds-box" style="flex-grow: 1;" />
+    </ui:VisualElement>
+</ui:UXML>

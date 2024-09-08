@@ -1,0 +1,29 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:ScrollView>
+        <ui:GroupBox name="unconnectable-modules" text="Unconnectable modules">
+            <ui:HelpBox text="Some modules cannot connect to any other module along one or more of their faces. These modules will never be able to be picked." message-type="Error" name="warning" />
+            <ui:ListView focusable="true" name="modules" show-border="true" class="unity-list-view" style="max-height: 100px;" />
+        </ui:GroupBox>
+        <ui:GroupBox name="face-on-cube-face-modules" text="Modules with face(s) on a bounding-box face">
+            <ui:HelpBox text="Some modules have faces that lie along the bounds. This will cause continuity breaks and invalid corner contents calculations." message-type="Error" name="warning" />
+            <ui:ListView focusable="true" name="modules" show-border="true" tooltip="Double click a module to open it in the tileset inspector" class="unity-list-view" style="max-height: 100px;" />
+        </ui:GroupBox>
+        <ui:GroupBox name="colliding-face-hashes" text="Modules with colliding face hashes">
+            <ui:HelpBox text="Some module face hashes collided with one another. This sometimes happens when vertices straddle the grid defined by the position resolution. Try changing the resolution in the importer asset or slightly moving vertices in the model." message-type="Error" name="warning" />
+            <ui:ListView focusable="true" name="collisions" show-border="true" class="unity-list-view" style="max-height: 100px;" />
+        </ui:GroupBox>
+        <ui:GroupBox name="super-inside-corners" text="Super-inside/outside corners">
+            <ui:HelpBox text="Some modules have overlapping manifold meshes. Wildtile cannot reliably calculate whether the corners are inside or outside of the mesh." message-type="Error" name="warning" />
+            <ui:ListView focusable="true" name="super-corners" show-border="true" class="unity-list-view" style="max-height: 100px;" />
+        </ui:GroupBox>
+        <ui:GroupBox name="out-of-bounds-vertices" text="Modules with out of bounds vertices">
+            <ui:HelpBox text="Some modules have vertices that are outside the tile bounds. Wildtile cannot reliably insideness and face hashes from these modules.&#10;&#10;Change the tile width and height in the importer or move/delete the offending vertices." message-type="Error" name="warning" />
+            <ui:ListView focusable="true" name="modules-with-out-of-bounds-vertices" show-border="true" class="unity-list-view" style="max-height: 100px;" />
+        </ui:GroupBox>
+        <ui:GroupBox name="empty-marching-cube-buckets" text="Empty marching cube buckets">
+            <ui:HelpBox text="Some marching cubes do not have any modules that fit them. This is only a problem if your voxel maps include these cube layouts." message-type="Warning" name="warning" />
+            <ui:ListView focusable="true" name="marching-cube-layouts" show-border="true" style="max-height: 100px;" />
+            <ui:IMGUIContainer name="marching-cube-preview" style="min-height: 100px;" />
+        </ui:GroupBox>
+    </ui:ScrollView>
+</ui:UXML>

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d87c9aab71aed4544b87848a2f50d198
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - marchingCubes: {instanceID: 0}
+  - map: {instanceID: 0}
+  - backupTiles: {fileID: 11400000, guid: 43875a372bc63e943baa210e4ac9ec11, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

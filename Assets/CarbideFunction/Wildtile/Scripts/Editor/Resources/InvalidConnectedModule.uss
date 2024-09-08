@@ -1,0 +1,8 @@
+.unity-label {
+    background-color:rgb(40,20,20);
+    color:silver;
+}
+.unity-label:selected {
+    background-color:rgb(60,40,40);
+    color:white;
+}

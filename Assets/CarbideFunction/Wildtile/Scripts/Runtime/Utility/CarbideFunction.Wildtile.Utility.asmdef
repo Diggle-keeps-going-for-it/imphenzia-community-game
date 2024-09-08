@@ -1,0 +1,14 @@
+{
+    "name": "CarbideFunction.Wildtile.Utility",
+    "rootNamespace": "CarbideFunction.Wildtile",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

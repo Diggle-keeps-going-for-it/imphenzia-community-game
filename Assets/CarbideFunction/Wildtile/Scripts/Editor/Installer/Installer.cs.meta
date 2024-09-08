@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 52933007cc72419489da29e63cb97709
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - universalUpgradePackage: {fileID: 102900000, guid: 96e28e01be9a9674b90caea65e4958a3, type: 3}
+  - highDefinitionUpgradePackage: {fileID: 102900000, guid: 2defe39bc6a720d438b32986293123d1, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

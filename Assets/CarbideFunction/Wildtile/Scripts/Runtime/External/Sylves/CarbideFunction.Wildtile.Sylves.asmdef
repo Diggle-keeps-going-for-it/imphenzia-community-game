@@ -1,0 +1,20 @@
+{
+    "name": "CarbideFunction.Wildtile.Sylves",
+    "rootNamespace": "",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "Unity",
+            "expression": "0",
+            "define": "UNITY"
+        }
+    ],
+    "noEngineReferences": false
+}

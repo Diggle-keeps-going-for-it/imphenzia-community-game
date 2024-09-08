@@ -1,0 +1,19 @@
+{
+    "name": "CarbideFunction.Wildtile.Editor.Utility",
+    "rootNamespace": "CarbideFunction.Wildtile.Editor",
+    "references": [
+        "GUID:be39fb9d45fef954c8dbc113dc4b06f8",
+        "GUID:8e2f60e98333692458ea898c5bbf3dd0"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

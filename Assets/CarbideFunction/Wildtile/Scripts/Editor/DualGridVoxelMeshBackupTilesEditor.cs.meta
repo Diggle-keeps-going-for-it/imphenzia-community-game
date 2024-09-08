@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 63a7d7dfa8d65a54daf067e0c2511aab
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - wildcardFaceMaterial: {fileID: 2100000, guid: c8045e36476ed0a45bc1872ca16a1435, type: 2}
+  - wildcardEmptyMaterial: {fileID: 2100000, guid: cd44feddb6c05da4cb1d0a5f3986f2eb, type: 2}
+  - wildcardFilledMaterial: {fileID: 2100000, guid: 7768f329e36528348b8f104377ea600c, type: 2}
+  - placeholderFaceMaterial: {fileID: 2100000, guid: 5e6d7d12dabb18d4184ac0df65d264b8, type: 2}
+  - placeholderEmptyMaterial: {instanceID: 0}
+  - placeholderFilledMaterial: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

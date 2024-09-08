@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 5f9328a9ae8275645a07eb463be812a1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - modelImporter: {instanceID: 0}
+  - permanentModelImporter: {instanceID: 0}
+  - outputTileset: {instanceID: 0}
+  - permanentOutputTileset: {instanceID: 0}
+  - searchParameters: {fileID: 11400000, guid: a338d5045d0ddcc41ad4d1fd51da1fb0, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

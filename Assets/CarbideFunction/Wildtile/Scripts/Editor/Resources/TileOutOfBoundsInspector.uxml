@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/CarbideFunction/Wildtile/Assets/WildtileEditorStyleSheet.uss?fileID=7433441132597879392&amp;guid=2fad742e3472a634bbda38b56c55731a&amp;type=3#WildtileEditorStyleSheet" />
+    <ui:Label text="Vertices outside bounds" display-tooltip-when-elided="true" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 3px; margin-right: 3px; margin-top: 1px; margin-bottom: 1px;" />
+    <ui:ListView focusable="true" name="vertices" show-border="true" tooltip="Vertex indices in the module&apos;s mesh which are out of the tile&apos;s dimensions. Double click to focus the camera on a vertex." />
+    <ui:IMGUIContainer name="user-settings" style="flex-shrink: 0; margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 8px;" />
+</ui:UXML>

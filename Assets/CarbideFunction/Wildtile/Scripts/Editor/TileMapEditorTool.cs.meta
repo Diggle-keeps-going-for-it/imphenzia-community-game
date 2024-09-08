@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 68b50fd26ce4db7438b00532880091f6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_Target: {instanceID: 0}
+  - editorMaterial: {fileID: 2100000, guid: ec44c8d585a27124abbb7c09b37eb783, type: 2}
+  - editorWallsMaterial: {fileID: 2100000, guid: ffb898f348e3c79449bd8b981d064edf, type: 2}
+  - editorVoxelTouchingWallsMaterial: {fileID: 2100000, guid: 8cfb37bd69362894c85ca7b6c553c3b5, type: 2}
+  - processingEditorMaterial: {fileID: 2100000, guid: df189d9bbd8c67b4280adf11b0558c91, type: 2}
+  - processingEditorWallsMaterial: {fileID: 2100000, guid: 02604476b7793d247b04b0c2b2bb41f1, type: 2}
+  - processingEditorVoxelTouchingWallsMaterial: {fileID: 2100000, guid: 83bc51a02d262e742864ed7f87f7a07c, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

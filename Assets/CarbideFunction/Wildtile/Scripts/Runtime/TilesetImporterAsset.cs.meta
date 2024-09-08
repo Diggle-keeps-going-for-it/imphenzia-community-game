@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0591b092f9e60d940a951f5573575ea5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - sourceModel: {instanceID: 0}
+  - postprocessorCreator: {fileID: 11400000, guid: dc5dc09ef9f199045803574aad0afe0e, type: 2}
+  - destinationTileset: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

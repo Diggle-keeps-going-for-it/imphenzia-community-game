@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:Template name="TilesetAnalysisReport" src="project://database/Assets/CarbideFunction/Wildtile/Scripts/Editor/Resources/TilesetAnalysisReport.uxml?fileID=9197481963319205126&amp;guid=4f4dff3592dce614993c335670419057&amp;type=3#TilesetAnalysisReport" />
+    <Style src="project://database/Assets/CarbideFunction/Wildtile/Assets/WildtileEditorStyleSheet.uss?fileID=7433441132597879392&amp;guid=2fad742e3472a634bbda38b56c55731a&amp;type=3#WildtileEditorStyleSheet" />
+    <uie:ObjectField label="Importer source" type="CarbideFunction.Wildtile.TilesetImporterAsset, CarbideFunction.Wildtile" name="importer-source" class="read-only" />
+    <uie:ObjectField label="Tileset output" type="CarbideFunction.Wildtile.Tileset, CarbideFunction.Wildtile" name="tileset-output" class="read-only" />
+    <ui:Instance template="TilesetAnalysisReport" name="report" />
+    <ui:HelpBox text="Import failed from an unrecoverable issue: " message-type="Error" name="import-error" />
+</ui:UXML>
