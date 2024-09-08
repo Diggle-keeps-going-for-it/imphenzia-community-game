@@ -96,7 +96,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _Animation_speed: 1
+    - _Animation_speed: 0.2
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -108,7 +108,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
-    - _Emission_Intensity: 1
+    - _Emission_Intensity: 5
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
