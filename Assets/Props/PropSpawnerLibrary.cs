@@ -14,4 +14,5 @@ public class PropSpawnerLibrary : ScriptableObject
     }
 
     public List<Option> options;
+    [Min(0f)] public float noSpawnWeight = 0f;
 }

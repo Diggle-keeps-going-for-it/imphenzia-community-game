@@ -12,4 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddee7de9bfc6ba541837ffa2f5e857d5, type: 3}
   m_Name: WallRocks
   m_EditorClassIdentifier: 
-  options: []
+  options:
+  - prefab: {fileID: 5524399634681554675, guid: 67ba5d42784dc424e9c8c92bbdad8bcd,
+      type: 3}
+    weight: 1
+  - prefab: {fileID: 5524399634681554675, guid: 7b03434181c1d5441844000208390ee8,
+      type: 3}
+    weight: 1
+  noSpawnWeight: 5
