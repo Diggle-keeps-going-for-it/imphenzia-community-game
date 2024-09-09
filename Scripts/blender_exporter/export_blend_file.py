@@ -29,6 +29,13 @@ def export_blend_3d_character_file(applied_transform_path_str : str, blend_file_
     process_state = subprocess.run(['blender.exe', '--background', applied_transform_path_str, '--python', str(blender_character_export_script_path), '--', calculate_export_path_for_blend_file(blend_file_path)])
     assert process_state.returncode == 0, 'failed to export models'
     
+def export_blend_3d_prop_file(applied_transform_path_str : str, blend_file_path_str : str) -> None:
+    blend_file_path = validate_blender_file(blend_file_path_str)
+    applied_transform_path = validate_blender_file(applied_transform_path_str)
+    print(f'blend file path: {blend_file_path}, applied_transform_path_str: {applied_transform_path_str}')
+    process_state = subprocess.run(['blender.exe', '--background', applied_transform_path_str, '--python', str(blender_prop_export_script_path), '--', calculate_export_path_for_blend_file(blend_file_path)])
+    assert process_state.returncode == 0, 'failed to export models'
+    
     
 def validate_blender_file(file_path : str) -> Path:
     path = Path(file_path)
@@ -54,6 +61,9 @@ blender_tile_export_script_path = script_directory_path / relative_path_to_tile_
 
 _relative_path_to_character_export_blender_script = Path('Blender') / Path('Export3dCharacterToUnitySource.py')
 blender_character_export_script_path = script_directory_path / _relative_path_to_character_export_blender_script
+
+_relative_path_to_prop_export_blender_script = Path('Blender') / Path('Export3dPropsToUnitySource.py')
+blender_prop_export_script_path = script_directory_path / _relative_path_to_prop_export_blender_script
 
 relative_path_to_apply_transform_script = Path('Blender') / Path('ApplyTransforms.py')
 apply_transform_script_path = script_directory_path / relative_path_to_apply_transform_script
