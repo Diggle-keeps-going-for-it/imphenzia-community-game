@@ -731,11 +731,11 @@ MonoBehaviour:
   tileset: {fileID: 11400000, guid: 58451f7b79a8d1d4bb729dddfab4e5b9, type: 2}
   voxelGrid: {fileID: 11400000, guid: c3496776144e6b94b81e0e51bfd23f61, type: 2}
   backupTiles: {fileID: 11400000, guid: 43875a372bc63e943baa210e4ac9ec11, type: 2}
-  seed: 0
+  seed: 1
   maxInGameSecondsPerFrame: 0.005
   maxCollapseSteps: 10000000
   maxPostprocessSteps: 1000000
-  showObjectsInHierarchy: 0
+  showObjectsInHierarchy: 1
   generateOnStartUp: 0
 --- !u!4 &2083277845
 Transform:
