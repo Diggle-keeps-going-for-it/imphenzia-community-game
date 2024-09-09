@@ -76,7 +76,8 @@ MonoBehaviour:
       - index: 0
       - index: 0
   - name: W_DIAG_BOTTOM_TMP
-    prefab: {fileID: 0}
+    prefab: {fileID: 5429923957165446952, guid: 7a68f9803eb20034c9009cacb2ce9084,
+      type: 3}
     mesh:
       vertices:
       - {x: -0.5, y: 0, z: -0.5}
@@ -560,7 +561,8 @@ MonoBehaviour:
       - index: 4
       - index: 3
   - name: W_IC_BOTTOM_TMP
-    prefab: {fileID: 0}
+    prefab: {fileID: 8460682055243126154, guid: d52f6cc98d14cbb4386f7f921dbbcb23,
+      type: 3}
     mesh:
       vertices:
       - {x: 0, y: 0, z: 0.5}
@@ -812,7 +814,8 @@ MonoBehaviour:
       - index: 6
       - index: 6
   - name: W_OC_BOTTOM_TMP
-    prefab: {fileID: 0}
+    prefab: {fileID: 6635289644284050688, guid: a1bd801798cbe664399e4dd740a348e6,
+      type: 3}
     mesh:
       vertices:
       - {x: -0.5, y: 0, z: 0.5}
@@ -1064,7 +1067,8 @@ MonoBehaviour:
       - index: 4
       - index: 3
   - name: W_ST_BOTTOM_BRICK01
-    prefab: {fileID: 0}
+    prefab: {fileID: 8751924409688368561, guid: 03ae2d41f729b864f937cbf5942b3ac6,
+      type: 3}
     mesh:
       vertices:
       - {x: 0.5, y: 0, z: 0.5}
@@ -1241,7 +1245,8 @@ MonoBehaviour:
       - index: 5
       - index: 1
   - name: W_ST_BOTTOM_BRICK02
-    prefab: {fileID: 0}
+    prefab: {fileID: 6090120383523881996, guid: 974a41399bb62b5408311060070cca9f,
+      type: 3}
     mesh:
       vertices:
       - {x: 0.5, y: 0, z: 0.5}
@@ -1514,7 +1519,8 @@ MonoBehaviour:
       - index: 5
       - index: 1
   - name: W_ST_BOTTOM_CAVE_L
-    prefab: {fileID: 0}
+    prefab: {fileID: 5731369204812662273, guid: 7f576884969673a428dcfe3b367ff636,
+      type: 3}
     mesh:
       vertices:
       - {x: 0.5, y: 0, z: 0.5}
@@ -2151,7 +2157,7 @@ MonoBehaviour:
       - index: 5
       - index: 1
   - name: W_ST_BOTTOM_CAVE_R
-    prefab: {fileID: 0}
+    prefab: {fileID: 606280295447436795, guid: 3de2f4e8af36b7a4b8bfc3a586d250fc, type: 3}
     mesh:
       vertices:
       - {x: -0.5, y: 0, z: 0.5}
@@ -2940,7 +2946,8 @@ MonoBehaviour:
       - index: 5
       - index: 7
   - name: W_ST_BOTTOM_TMP
-    prefab: {fileID: 0}
+    prefab: {fileID: 1087395502993047056, guid: a461cceb6464ceb468d5efacfa23e8d2,
+      type: 3}
     mesh:
       vertices:
       - {x: 0.5, y: 0, z: 0.5}
@@ -7649,8 +7656,8 @@ MonoBehaviour:
   - index: 22
   - index: 21
   tileDimensions: {x: 2, y: 2, z: 2}
-  postprocessor: {fileID: 4737551970124465006}
---- !u!114 &4737551970124465006
+  postprocessor: {fileID: 3835425105685214411}
+--- !u!114 &3835425105685214411
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
