@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &606280295447436795
+--- !u!1 &4651343041788938719
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,31 +8,31 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7402680693786650356}
+  - component: {fileID: 7937956266370456137}
   m_Layer: 0
-  m_Name: W_ST_BOTTOM_CAVE_R
+  m_Name: W_ST_TOP_TMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7402680693786650356
+--- !u!4 &7937956266370456137
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606280295447436795}
+  m_GameObject: {fileID: 4651343041788938719}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1726800949233925212}
+  - {fileID: 735612953867494792}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8457782443378857536
+--- !u!1 &7831023988371423464
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,56 +40,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1726800949233925212}
-  - component: {fileID: 8958587727694443931}
-  - component: {fileID: 5146423408535168758}
+  - component: {fileID: 735612953867494792}
+  - component: {fileID: 58252468137415422}
   m_Layer: 0
-  m_Name: WallRocksProps
+  m_Name: WallBricksProps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1726800949233925212
+--- !u!4 &735612953867494792
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8457782443378857536}
+  m_GameObject: {fileID: 7831023988371423464}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.40534914, y: 0, z: 0.16497922}
+  m_LocalPosition: {x: 0.14, y: -0.493, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7402680693786650356}
+  m_Father: {fileID: 7937956266370456137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8958587727694443931
+--- !u!114 &58252468137415422
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8457782443378857536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80943f3cd04414441abcc217abe53039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conditionList:
-    conditions:
-    - conditionType: 0
-      randomChance: 0.5
-      comparison: 0
-      depth: 3
---- !u!114 &5146423408535168758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8457782443378857536}
+  m_GameObject: {fileID: 7831023988371423464}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7939ce9ba263e384aa4524e60aa0e3ae, type: 3}
@@ -97,19 +78,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conditionList:
     conditions:
-    - conditionType: 0
-      randomChance: 0.8
+    - conditionType: 1
+      randomChance: 1
       comparison: 1
       depth: 10
-    - conditionType: 1
-      randomChance: 0.4
+    - conditionType: 0
+      randomChance: 0.1
       comparison: 1
-      depth: 2
+      depth: 10
   targets:
-  - gameObject: {fileID: 4188168408202570625, guid: cb46d0d5f8bb82f4ebc09670c53919b9,
+  - gameObject: {fileID: 292850174001581332, guid: c0237f64973ddab4bbe528b026d1f347,
       type: 3}
     weight: 1
-  - gameObject: {fileID: 7458440389797198605, guid: 7b03434181c1d5441844000208390ee8,
+  - gameObject: {fileID: 292850174001581332, guid: c2c3f70f7a4e93c48a882ecd742c3ffc,
       type: 3}
     weight: 1
   useWeights: 0

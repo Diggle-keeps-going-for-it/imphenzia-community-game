@@ -31,6 +31,7 @@ Transform:
   m_Children:
   - {fileID: 5912312769646560350}
   - {fileID: 5193859172797681309}
+  - {fileID: 4564279838750384147}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4647249003483057405
@@ -111,6 +112,69 @@ MonoBehaviour:
       type: 3}
     weight: 1
   - gameObject: {fileID: 7458440389797198605, guid: 7b03434181c1d5441844000208390ee8,
+      type: 3}
+    weight: 1
+  useWeights: 0
+  thenDestroyThis: 0
+--- !u!1 &4998280705121931162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4564279838750384147}
+  - component: {fileID: 174720890482533361}
+  m_Layer: 0
+  m_Name: WallBricksProps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4564279838750384147
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4998280705121931162}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.046, y: 0.562, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4621078645898860740}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &174720890482533361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4998280705121931162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7939ce9ba263e384aa4524e60aa0e3ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionList:
+    conditions:
+    - conditionType: 1
+      randomChance: 1
+      comparison: 1
+      depth: 10
+    - conditionType: 0
+      randomChance: 0.1
+      comparison: 1
+      depth: 10
+  targets:
+  - gameObject: {fileID: 292850174001581332, guid: c0237f64973ddab4bbe528b026d1f347,
+      type: 3}
+    weight: 1
+  - gameObject: {fileID: 292850174001581332, guid: c2c3f70f7a4e93c48a882ecd742c3ffc,
       type: 3}
     weight: 1
   useWeights: 0
