@@ -1,6 +1,8 @@
 name: Build and Upload
 on:
-  workflow_dispatch: {}
+  schedule:
+    cron: '55 * * * *'
+  # workflow_dispatch: {}
 
 jobs:
   #  build-FMOD:
