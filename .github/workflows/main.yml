@@ -1,0 +1,96 @@
+name: Build and Upload
+on:
+  workflow_dispatch: {}
+
+jobs:
+  #  build-FMOD:
+  #    name: Build FMOD
+  #    runs-on: self-hosted
+  #    steps:
+  #      - name: Checkout repository
+  #        uses: actions/checkout@v4
+  #        with:
+  #          lfs: 'True'
+  #
+  #      # Cache
+  #      - name: FMOD cache
+  #        id: fmod-cache
+  #        uses: actions/cache@v4
+  #        with:
+  #          path: FMOD
+  #          key: FMOD-${{ hashFiles('FMOD/**') }}
+  #          restore-keys: |
+  #            FMOD-
+  #
+  #      - name: Build FMOD
+  #        if: steps.fmod-cache.outputs.cache-hit != 'true'
+  #        run: E:/Program` Files/FMOD` SoundSystem/FMOD` Studio` 2.02.22/fmodstudio.exe -build FMOD/${{ vars.FMOD_PROJECT_NAME }}/${{ vars.FMOD_PROJECT_NAME }}.fspro
+  #
+  #      - uses: actions/upload-artifact@v4
+  #        with:
+  #          name: FMOD
+  #          path: FMOD/${{ vars.FMOD_PROJECT_NAME }}/Build/*
+  #          if-no-files-found: error
+
+  build:
+    name: Build Unity
+    runs-on: ubuntu-latest
+    # needs: build-FMOD
+    steps:
+      # Checkout (without LFS)
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Git LFS
+      - name: Create LFS file list
+        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
+
+      - name: Restore LFS cache
+        uses: actions/cache@v4
+        id: lfs-cache
+        with:
+          path: .git/lfs
+          key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
+
+      - name: Git LFS Pull
+        run: |
+          git lfs pull
+          git add .
+          git reset --hard
+
+      # Cache
+      - uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-
+
+      # Build
+      #- uses: actions/download-artifact@v4
+      #  with:
+      #    name: FMOD
+      #    path: FMOD/${{ vars.FMOD_PROJECT_NAME }}/Build/
+
+      - name: Build project
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: WebGL
+          customImage: 'unityci/editor:ubuntu-2022.3.10f1-webgl-2'
+
+      # - name: Move to one layer folder
+      #   run: |
+      #     sudo mv build/WebGL/* build/
+
+      # Upload to itch
+      - uses: manleydev/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          CHANNEL: windows
+          ITCH_GAME: ${{ vars.ITCH_GAME_NAME }}
+          ITCH_USER: fuseinabowl
+          PACKAGE: build
