@@ -194,7 +194,7 @@ internal class TilesetInspector : EditorWindow, SubInspectors.IInspectorAccess
 
         modulesField = rootVisualElement.Query<ListView>("modules").First();
         ListViewBinder.SetupListViewInitial<SelectedModule>(modulesField, (uiElement, module) => (uiElement as Label).text = CreateNameFromModule(module.module));
-        modulesField.onSelectionChange += e => OnModuleSelected(((SelectedModule)e.FirstOrDefault()));
+        modulesField.selectionChanged += e => OnModuleSelected(((SelectedModule)e.FirstOrDefault()));
         modulesField.RegisterCallback<MouseDownEvent>(e => {if (e.clickCount == 2){OpenPreviewStage();}});
 
         inspectionModeField = rootVisualElement.Query<DropdownField>("inspection-mode").First();

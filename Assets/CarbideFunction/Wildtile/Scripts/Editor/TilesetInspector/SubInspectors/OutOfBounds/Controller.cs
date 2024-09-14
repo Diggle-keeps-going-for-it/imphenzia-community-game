@@ -27,7 +27,7 @@ internal class Controller
 
     private void RegisterForUiEvents(View view)
     {
-        view.VerticesListView.onSelectionChange += e => OnVertexSelected();
+        view.VerticesListView.selectionChanged += e => OnVertexSelected();
         view.VerticesListView.RegisterCallback<MouseDownEvent>(OnVerticesMouseDown);
         view.UserSettingsView.onGUIHandler += OnUserSettingsGui;
     }

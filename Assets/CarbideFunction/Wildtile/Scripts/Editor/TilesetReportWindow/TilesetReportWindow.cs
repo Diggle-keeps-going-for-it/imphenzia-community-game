@@ -144,7 +144,7 @@ internal class TilesetReportWindow : EditorWindow
         faceOnCubeFaceModules = faceOnCubeFaceRoot.Q<ListView>("modules");
         faceOnCubeFaceModules.RegisterCallback<MouseDownEvent>(e => {if (e.clickCount == 2){OpenTrianglesOnModuleFaceInModuleInspector();}});
 
-        emptyTileset.onSelectionChange += OnEmptyTilesetSelectionChanged;
+        emptyTileset.selectionChanged += OnEmptyTilesetSelectionChanged;
 
         importErrorWarning = rootVisualElement.Q<HelpBox>("import-error");
 

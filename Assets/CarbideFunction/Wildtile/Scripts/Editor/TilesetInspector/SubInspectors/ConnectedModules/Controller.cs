@@ -37,7 +37,7 @@ internal class Controller
     {
         view.validityField.RegisterCallback<ChangeEvent<string>>(e => OnValidityChanged());
         view.directionField.RegisterCallback<ChangeEvent<string>>(e => OnDirectionChanged());
-        view.connectedModulesField.onSelectionChange += e => OnConnectedModuleSelected((ConnectedModule)e.FirstOrDefault());
+        view.connectedModulesField.selectionChanged += e => OnConnectedModuleSelected((ConnectedModule)e.FirstOrDefault());
     }
 
     public void UploadCurrentValuesToUi()

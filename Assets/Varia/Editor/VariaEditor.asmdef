@@ -1,0 +1,17 @@
+{
+    "name": "VariaEditor",
+    "references": [
+        "GUID:617ea0ff4b9f0084b8859e2e8bf9e094"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

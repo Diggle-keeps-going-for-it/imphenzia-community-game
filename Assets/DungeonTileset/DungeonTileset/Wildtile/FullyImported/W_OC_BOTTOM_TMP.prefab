@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3724684094242563119}
-  - component: {fileID: 2869733697537286267}
+  - component: {fileID: 5176630182186607721}
+  - component: {fileID: 8358095004457964749}
   m_Layer: 0
   m_Name: WallRocksProps (1)
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1636978312902431972}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &2869733697537286267
+--- !u!114 &5176630182186607721
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,10 +42,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 371112044661767109}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cf3602c2224ad14288fdfc7d7163683, type: 3}
+  m_Script: {fileID: 11500000, guid: 80943f3cd04414441abcc217abe53039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  library: {fileID: 11400000, guid: af4f120e4d933574198d00d697755292, type: 2}
+  conditionList:
+    conditions:
+    - conditionType: 0
+      randomChance: 0.5
+      comparison: 0
+      depth: 3
+--- !u!114 &8358095004457964749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371112044661767109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7939ce9ba263e384aa4524e60aa0e3ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionList:
+    conditions:
+    - conditionType: 0
+      randomChance: 0.8
+      comparison: 1
+      depth: 10
+    - conditionType: 1
+      randomChance: 0.4
+      comparison: 1
+      depth: 2
+  targets:
+  - gameObject: {fileID: 4188168408202570625, guid: cb46d0d5f8bb82f4ebc09670c53919b9,
+      type: 3}
+    weight: 1
+  - gameObject: {fileID: 7458440389797198605, guid: 7b03434181c1d5441844000208390ee8,
+      type: 3}
+    weight: 1
+  useWeights: 0
+  thenDestroyThis: 0
 --- !u!1 &5419089191492260979
 GameObject:
   m_ObjectHideFlags: 0
@@ -54,7 +91,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5920671309685799930}
-  - component: {fileID: 950519691243478214}
+  - component: {fileID: 3095618307324128073}
+  - component: {fileID: 6493596019134397414}
   m_Layer: 0
   m_Name: WallRocksProps
   m_TagString: Untagged
@@ -77,7 +115,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1636978312902431972}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &950519691243478214
+--- !u!114 &3095618307324128073
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,10 +124,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 5419089191492260979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cf3602c2224ad14288fdfc7d7163683, type: 3}
+  m_Script: {fileID: 11500000, guid: 80943f3cd04414441abcc217abe53039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  library: {fileID: 11400000, guid: af4f120e4d933574198d00d697755292, type: 2}
+  conditionList:
+    conditions:
+    - conditionType: 0
+      randomChance: 0.5
+      comparison: 0
+      depth: 3
+--- !u!114 &6493596019134397414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5419089191492260979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7939ce9ba263e384aa4524e60aa0e3ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionList:
+    conditions:
+    - conditionType: 0
+      randomChance: 0.8
+      comparison: 1
+      depth: 10
+    - conditionType: 1
+      randomChance: 0.4
+      comparison: 1
+      depth: 2
+  targets:
+  - gameObject: {fileID: 4188168408202570625, guid: cb46d0d5f8bb82f4ebc09670c53919b9,
+      type: 3}
+    weight: 1
+  - gameObject: {fileID: 7458440389797198605, guid: 7b03434181c1d5441844000208390ee8,
+      type: 3}
+    weight: 1
+  useWeights: 0
+  thenDestroyThis: 0
 --- !u!1 &6635289644284050688
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +207,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8271939375074446674}
-  - component: {fileID: 8061453870327934382}
+  - component: {fileID: 7217758220673117980}
+  - component: {fileID: 6762666303425855270}
   m_Layer: 0
   m_Name: WallRocksProps (2)
   m_TagString: Untagged
@@ -156,7 +231,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1636978312902431972}
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
---- !u!114 &8061453870327934382
+--- !u!114 &7217758220673117980
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,7 +240,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 6865959841984765059}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cf3602c2224ad14288fdfc7d7163683, type: 3}
+  m_Script: {fileID: 11500000, guid: 80943f3cd04414441abcc217abe53039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  library: {fileID: 11400000, guid: af4f120e4d933574198d00d697755292, type: 2}
+  conditionList:
+    conditions:
+    - conditionType: 0
+      randomChance: 0.5
+      comparison: 0
+      depth: 3
+--- !u!114 &6762666303425855270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6865959841984765059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7939ce9ba263e384aa4524e60aa0e3ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionList:
+    conditions:
+    - conditionType: 0
+      randomChance: 0.8
+      comparison: 1
+      depth: 10
+    - conditionType: 1
+      randomChance: 0.4
+      comparison: 1
+      depth: 2
+  targets:
+  - gameObject: {fileID: 4188168408202570625, guid: cb46d0d5f8bb82f4ebc09670c53919b9,
+      type: 3}
+    weight: 1
+  - gameObject: {fileID: 7458440389797198605, guid: 7b03434181c1d5441844000208390ee8,
+      type: 3}
+    weight: 1
+  useWeights: 0
+  thenDestroyThis: 0
