@@ -11,12 +11,12 @@ PrefabInstance:
     - target: {fileID: 490719640069230409, guid: dcf71f200a0d8cc48a32070ff015391d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.14
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 490719640069230409, guid: dcf71f200a0d8cc48a32070ff015391d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.493
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 490719640069230409, guid: dcf71f200a0d8cc48a32070ff015391d,
         type: 3}
@@ -62,6 +62,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallBricksProps
+      objectReference: {fileID: 0}
+    - target: {fileID: 6479709636886172051, guid: dcf71f200a0d8cc48a32070ff015391d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6479709636886172051, guid: dcf71f200a0d8cc48a32070ff015391d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

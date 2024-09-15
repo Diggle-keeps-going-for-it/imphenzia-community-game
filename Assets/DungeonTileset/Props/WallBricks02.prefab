@@ -8,10 +8,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 351070957180785452, guid: 24323a5398afefd4cb258cc8bddad814,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1689421761317465811, guid: 6e3ddafca56cf6741b7ced95c3146e31,
+        type: 3}
     - target: {fileID: 1257634986571599444, guid: 24323a5398afefd4cb258cc8bddad814,
         type: 3}
       propertyPath: m_Name
-      value: WallBricks00
+      value: WallBricks02
       objectReference: {fileID: 0}
     - target: {fileID: 1878546821920140397, guid: 24323a5398afefd4cb258cc8bddad814,
         type: 3}
@@ -66,35 +72,5 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1257634986571599444, guid: 24323a5398afefd4cb258cc8bddad814,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7336155075540315830}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24323a5398afefd4cb258cc8bddad814, type: 3}
---- !u!1 &292850174001581332 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1257634986571599444, guid: 24323a5398afefd4cb258cc8bddad814,
-    type: 3}
-  m_PrefabInstance: {fileID: 1541477875368231744}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7336155075540315830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 292850174001581332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8169df70140bd7f42bb679f2a984875f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conditionList:
-    conditions: []
-  point: {x: 0, y: 0, z: 0}
-  axis: {x: 0, y: 1, z: 0}
-  min: -10
-  max: 10
-  dispersionMin: 0
-  dispersionMax: 10
