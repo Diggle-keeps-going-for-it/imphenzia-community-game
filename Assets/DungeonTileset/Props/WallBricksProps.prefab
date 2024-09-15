@@ -29,8 +29,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6479709636886172051}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8347340417961758692
@@ -45,36 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d29eb9c8fbf214e8f820b58a8264c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spanObject: {fileID: 4840093537270409523}
+  spanObject: {fileID: 0}
   prefab: {fileID: 2599278992104510991, guid: cb1b22499296d3f449bcfbed56e15dd3, type: 3}
---- !u!1 &4840093537270409523
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6479709636886172051}
-  m_Layer: 0
-  m_Name: Span
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6479709636886172051
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4840093537270409523}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 490719640069230409}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

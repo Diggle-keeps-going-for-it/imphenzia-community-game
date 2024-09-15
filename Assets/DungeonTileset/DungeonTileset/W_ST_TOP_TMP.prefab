@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1781203172359911993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6623343891118979498}
+  m_Layer: 0
+  m_Name: Wall bricks span
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6623343891118979498
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781203172359911993}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: -0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1114763250097975234}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5556502573017852460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73,6 +104,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 8347340417961758692, guid: dcf71f200a0d8cc48a32070ff015391d,
+        type: 3}
+      propertyPath: spanObject
+      value: 
+      objectReference: {fileID: 1781203172359911993}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -154,6 +190,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5463934313846777189}
+    - targetCorrespondingSourceObject: {fileID: 6446301301760384854, guid: c6d7a6e65279cbf4e872df20b056a439,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6623343891118979498}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6d7a6e65279cbf4e872df20b056a439, type: 3}
 --- !u!4 &1114763250097975234 stripped
