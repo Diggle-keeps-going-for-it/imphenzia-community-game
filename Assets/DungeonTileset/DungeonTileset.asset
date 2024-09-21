@@ -267,7 +267,8 @@ MonoBehaviour:
       - index: 2
       - index: 1
   - name: W_DIAG_TOP_TMP
-    prefab: {fileID: 0}
+    prefab: {fileID: 4972674398509701381, guid: 4ae835c23a704ad43bab1858794ac6f8,
+      type: 3}
     mesh:
       vertices:
       - {x: 0.5, y: 0, z: -0.25}
@@ -3802,8 +3803,8 @@ MonoBehaviour:
   - index: 13
   - index: 14
   tileDimensions: {x: 2, y: 2, z: 2}
-  postprocessor: {fileID: 4234174468801178338}
---- !u!114 &4234174468801178338
+  postprocessor: {fileID: 6663938957889082035}
+--- !u!114 &6663938957889082035
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
