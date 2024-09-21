@@ -44,7 +44,9 @@ def prepare_for_export() -> List[ExportableModels]:
 
 
 def get_props() -> List[bpy.types.Object]:
-    return [obj for obj in bpy.data.objects if type(obj.data) is bpy.types.Mesh]
+    props_collection = bpy.data.collections['Props']
+    assert props_collection is not None, 'Could not find collection with name \'Props\''
+    return [obj for obj in props_collection.all_objects if type(obj.data) is bpy.types.Mesh]
 
 
 def make_all_collections_selectable() -> None:
