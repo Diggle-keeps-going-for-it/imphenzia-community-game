@@ -32,7 +32,7 @@ namespace Varia
 
         public int depth { get; private set; }
 
-        public bool log { get; set; } = true;
+        public bool log { get; set; } = false;
         public bool recordUndo { get; set; } = false;
 
         public Random.State randomState;
