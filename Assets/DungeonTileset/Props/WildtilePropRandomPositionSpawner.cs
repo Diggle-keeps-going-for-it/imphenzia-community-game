@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
+[ExecuteAlways]
 public class WildtilePropRandomPositionSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject spanObject;
@@ -10,13 +12,30 @@ public class WildtilePropRandomPositionSpawner : MonoBehaviour
 
     private void Start()
     {
-        var span = GetPositionSpan();
-        var widthRandom = Random.value;
-        var heightRandom = Random.value;
-        var instancePosition = span.worldBasis + span.worldCrossOffset * widthRandom + span.worldUpOffset * heightRandom;
-        var instanceRotation = Quaternion.Slerp(transform.rotation, spanObject.transform.rotation, widthRandom);
+        var (instancePosition, instanceRotation) = GeneratePositionAndRotation();
 
-        Instantiate(prefab, instancePosition, instanceRotation, transform);
+        var instance = Instantiate(prefab, instancePosition, instanceRotation, transform);
+        if (instance != null)
+        {
+            instance.hideFlags = HideFlags.DontSave;
+        }
+    }
+
+    private (Vector3, Quaternion) GeneratePositionAndRotation()
+    {
+        if (spanObject != null)
+        {
+            var span = GetPositionSpan();
+            var widthRandom = Random.value;
+            var heightRandom = Random.value;
+            var instancePosition = span.worldBasis + span.worldCrossOffset * widthRandom + span.worldUpOffset * heightRandom;
+            var instanceRotation = Quaternion.Slerp(transform.rotation, spanObject.transform.rotation, widthRandom);
+            return (instancePosition, instanceRotation);
+        }
+        else
+        {
+            return (transform.position, transform.rotation);
+        }
     }
 
     public class PositionSpan
@@ -27,6 +46,7 @@ public class WildtilePropRandomPositionSpawner : MonoBehaviour
     }
     public PositionSpan GetPositionSpan()
     {
+        Assert.IsNotNull(spanObject);
         var span = spanObject.transform.position - transform.position;
         return new PositionSpan{
             worldBasis = transform.position,

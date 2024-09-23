@@ -44,8 +44,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5193859172797681309}
-  - component: {fileID: 1853172681018187488}
-  - component: {fileID: 5602311699824335524}
+  - component: {fileID: 71823019406754914}
   m_Layer: 0
   m_Name: WallRocksProps (1)
   m_TagString: Untagged
@@ -68,7 +67,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4621078645898860740}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1853172681018187488
+--- !u!114 &71823019406754914
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,46 +76,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4647249003483057405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80943f3cd04414441abcc217abe53039, type: 3}
+  m_Script: {fileID: 11500000, guid: e1d2a9a961d510c4195262760a9f44fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conditionList:
-    conditions:
-    - conditionType: 0
-      randomChance: 0.5
-      comparison: 0
-      depth: 3
---- !u!114 &5602311699824335524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4647249003483057405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7939ce9ba263e384aa4524e60aa0e3ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conditionList:
-    conditions:
-    - conditionType: 0
-      randomChance: 0.8
-      comparison: 1
-      depth: 10
-    - conditionType: 1
-      randomChance: 0.4
-      comparison: 1
-      depth: 2
-  targets:
-  - gameObject: {fileID: 4188168408202570625, guid: cb46d0d5f8bb82f4ebc09670c53919b9,
-      type: 3}
-    weight: 1
-  - gameObject: {fileID: 7458440389797198605, guid: 7b03434181c1d5441844000208390ee8,
-      type: 3}
-    weight: 1
-  useWeights: 0
-  thenDestroyThis: 0
+  continuousRefresh: 0
+  refreshInEditor: 1
+  refreshBufferTime: 0
+  seed: 0
+  target: {fileID: 5594348899574227862, guid: 8d56a57d2d3a2a64ebadb0bfcb0c0324, type: 3}
 --- !u!1 &4998280705121931162
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,8 +139,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5912312769646560350}
-  - component: {fileID: 5184437625320761984}
-  - component: {fileID: 5531480592803172235}
+  - component: {fileID: 7138196448183142291}
   m_Layer: 0
   m_Name: WallRocksProps
   m_TagString: Untagged
@@ -196,7 +162,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4621078645898860740}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5184437625320761984
+--- !u!114 &7138196448183142291
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,46 +171,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5292793806068056492}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80943f3cd04414441abcc217abe53039, type: 3}
+  m_Script: {fileID: 11500000, guid: e1d2a9a961d510c4195262760a9f44fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conditionList:
-    conditions:
-    - conditionType: 0
-      randomChance: 0.5
-      comparison: 0
-      depth: 3
---- !u!114 &5531480592803172235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5292793806068056492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7939ce9ba263e384aa4524e60aa0e3ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conditionList:
-    conditions:
-    - conditionType: 0
-      randomChance: 0.8
-      comparison: 1
-      depth: 10
-    - conditionType: 1
-      randomChance: 0.4
-      comparison: 1
-      depth: 2
-  targets:
-  - gameObject: {fileID: 4188168408202570625, guid: cb46d0d5f8bb82f4ebc09670c53919b9,
-      type: 3}
-    weight: 1
-  - gameObject: {fileID: 7458440389797198605, guid: 7b03434181c1d5441844000208390ee8,
-      type: 3}
-    weight: 1
-  useWeights: 0
-  thenDestroyThis: 0
+  continuousRefresh: 0
+  refreshInEditor: 1
+  refreshBufferTime: 0
+  seed: 0
+  target: {fileID: 5594348899574227862, guid: 8d56a57d2d3a2a64ebadb0bfcb0c0324, type: 3}
 --- !u!1 &5749468217984006259
 GameObject:
   m_ObjectHideFlags: 0
