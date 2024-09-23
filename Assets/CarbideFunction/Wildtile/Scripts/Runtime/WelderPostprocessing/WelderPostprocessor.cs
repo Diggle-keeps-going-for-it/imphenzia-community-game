@@ -46,8 +46,9 @@ public class WelderPostprocessor : Postprocessor
         postprocessorPerfMarker.Begin();
         var accumulatingMesh = new AccumulatingMesh();
 
-        foreach (var slot in map.slots)
+        for (var slotIndex = 0; slotIndex < map.slots.Length; ++slotIndex)
         {
+            var slot = map.slots[slotIndex];
             var warper = new VertexWarper(
                 slot.v000, slot.v001,
                 slot.v010, slot.v011,
@@ -64,6 +65,7 @@ public class WelderPostprocessor : Postprocessor
             if (slot.prefab != null)
             {
                 var instance = GameObject.Instantiate(slot.prefab, root.transform);
+                DestroyBorderChildrenOnBorder(instance, tileDimensions, slot.flipIndices, slot.yawIndex, slotIndex, slot.halfLoops);
                 WarpDirectChildrenPositions(warper, slot.normalWarper, instance.transform, tileDimensions, inverseTileDimensions);
             }
         }
@@ -99,6 +101,163 @@ public class WelderPostprocessor : Postprocessor
         var meshCollider = meshGameObject.AddComponent<MeshCollider>();
         meshCollider.sharedMesh = physicsMesh;
         postprocessorPerfMarker.End();
+    }
+
+    private class BorderObjectsPolicy
+    {
+        public bool keepForward;
+        public bool keepRight;
+        public bool keepBack;
+        public bool keepLeft;
+        public bool keepUp;
+        public bool keepDown;
+    }
+    private void DestroyBorderChildrenOnBorder(GameObject instance, Vector3 tileDimensions, bool isFlipped, int yawIndex, int slotIndex, FaceData<PostprocessableMap.SlotHalfLoop> halfLoops)
+    {
+        // calculate policy
+        // look up that face in the half loops
+        var policy = new BorderObjectsPolicy();
+        // if the border points into an already created slot, destroy this slot's objects along this border
+        policy.keepForward = ShouldKeepBorderObjectsPointingAtSlotIndex(halfLoops.forward.targetSlotIndex, slotIndex);
+        policy.keepRight   = ShouldKeepBorderObjectsPointingAtSlotIndex(halfLoops.right.targetSlotIndex, slotIndex);
+        policy.keepBack    = ShouldKeepBorderObjectsPointingAtSlotIndex(halfLoops.back.targetSlotIndex, slotIndex);
+        policy.keepLeft    = ShouldKeepBorderObjectsPointingAtSlotIndex(halfLoops.left.targetSlotIndex, slotIndex);
+        policy.keepUp      = ShouldKeepBorderObjectsPointingAtSlotIndex(halfLoops.up.targetSlotIndex, slotIndex);
+        policy.keepDown    = ShouldKeepBorderObjectsPointingAtSlotIndex(halfLoops.down.targetSlotIndex, slotIndex);
+        
+        // inverse-rotate the policy based using the selected module's yaw index
+        InverseRotatePolicyByYawIndex(policy, yawIndex);
+        if (isFlipped)
+        {
+            FlipPolicyLeftAndRight(policy);
+        }
+
+        // find border objects in instance and apply the policy (destroy or leave)
+        ApplyDestructionPolicyToBorderObjects(instance.transform, tileDimensions, policy);
+    }
+
+    private static bool ShouldKeepBorderObjectsPointingAtSlotIndex(int targetSlotIndex, int numberOfBuiltSlots)
+    {
+        return targetSlotIndex == -1 || targetSlotIndex > numberOfBuiltSlots;
+    }
+
+    private void FlipPolicyLeftAndRight(BorderObjectsPolicy policy)
+    {
+        (policy.keepRight, policy.keepLeft) = (policy.keepLeft, policy.keepRight);
+    }
+
+    private void InverseRotatePolicyByYawIndex(BorderObjectsPolicy policy, int yawIndex)
+    {
+        switch (yawIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                {
+                    // counter clockwise 1
+                    var oldForward = policy.keepForward;
+                    policy.keepForward = policy.keepRight;
+                    policy.keepRight = policy.keepBack;
+                    policy.keepBack = policy.keepLeft;
+                    policy.keepLeft = oldForward;
+                    break;
+                }
+            case 2:
+                {
+                    // 180 rotation
+                    (policy.keepBack, policy.keepForward) = (policy.keepForward, policy.keepBack);
+                    (policy.keepLeft, policy.keepRight) = (policy.keepRight, policy.keepLeft);
+                    break;
+                }
+            case 3:
+                {
+                    // clockwise 1
+                    var oldForward = policy.keepForward;
+                    policy.keepForward = policy.keepLeft;
+                    policy.keepLeft = policy.keepBack;
+                    policy.keepBack = policy.keepRight;
+                    policy.keepRight = oldForward;
+                    break;
+                }
+            default:
+                {
+                    Assert.IsTrue(false, $"Unknown yaw index: {yawIndex}");
+                    break;
+                }
+        }
+    }
+
+    private const float borderObjectsEpsilon = 1e-4f;
+    private void ApplyDestructionPolicyToBorderObjects(Transform transform, Vector3 tileDimensions, BorderObjectsPolicy policy)
+    {
+        var halfDimensions = tileDimensions * 0.5f;
+        var toDestroy = new List<GameObject>();
+        foreach (Transform instanceTransform in transform)
+        {
+            if (instanceTransform.localPosition.x >= halfDimensions.x - borderObjectsEpsilon)
+            {
+                if (!policy.keepRight)
+                {
+                    toDestroy.Add(instanceTransform.gameObject);
+                }
+            }
+            else if (instanceTransform.localPosition.x <= -halfDimensions.x + borderObjectsEpsilon)
+            {
+                if (!policy.keepLeft)
+                {
+                    toDestroy.Add(instanceTransform.gameObject);
+                }
+            }
+            else if (instanceTransform.localPosition.y >= halfDimensions.y - borderObjectsEpsilon)
+            {
+                if (!policy.keepUp)
+                {
+                    toDestroy.Add(instanceTransform.gameObject);
+                }
+            }
+            else if (instanceTransform.localPosition.y <= -halfDimensions.y + borderObjectsEpsilon)
+            {
+                if (!policy.keepDown)
+                {
+                    toDestroy.Add(instanceTransform.gameObject);
+                }
+            }
+            else if (instanceTransform.localPosition.z >= halfDimensions.z - borderObjectsEpsilon)
+            {
+                if (!policy.keepForward)
+                {
+                    toDestroy.Add(instanceTransform.gameObject);
+                }
+            }
+            else if (instanceTransform.localPosition.z <= -halfDimensions.z + borderObjectsEpsilon)
+            {
+                if (!policy.keepBack)
+                {
+                    toDestroy.Add(instanceTransform.gameObject);
+                }
+            }
+        }
+
+        foreach (var destroyTarget in toDestroy)
+        {
+            DestroyBorderObject(destroyTarget);
+        }
+    }
+
+    private void DestroyBorderObject(GameObject target)
+    {
+#if UNITY_EDITOR
+        if (Application.IsPlaying(target))
+        {
+            Destroy(target);
+        }
+        else
+        {
+            DestroyImmediate(target);
+        }
+#else
+        Destroy(target);
+#endif
     }
 
     private void CollectGeometry(VertexWarper vertexWarper, NormalWarper normalWarper, bool shouldFlipWinding, ModuleMesh mesh, AccumulatingMesh outputMesh)

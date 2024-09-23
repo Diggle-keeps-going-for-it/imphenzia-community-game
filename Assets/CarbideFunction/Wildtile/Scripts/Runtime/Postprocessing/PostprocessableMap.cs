@@ -17,6 +17,7 @@ public class PostprocessableMap
 
     public struct SlotHalfLoop
     {
+        public int targetSlotIndex;
         public Slot targetSlot;
         public Face facingFaceOnTarget;
     }
@@ -31,6 +32,7 @@ public class PostprocessableMap
         public GameObject prefab;
         public ModuleMesh mesh;
         public bool flipIndices;
+        public int yawIndex;
         public string moduleName;
 
         public FaceData<SlotHalfLoop> halfLoops;

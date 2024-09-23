@@ -437,9 +437,18 @@ public class GridPlacer : MonoBehaviour
                 {
                     Assert.IsNotNull(originalHalfLoop.targetSlot);
                     var postprocessableHalfLoop = new Postprocessing.PostprocessableMap.SlotHalfLoop();
+                    postprocessableHalfLoop.targetSlotIndex = originalHalfLoop.targetSlotIndex;
                     postprocessableHalfLoop.targetSlot = slotToPostprocessableSlot[originalHalfLoop.targetSlot];
                     postprocessableHalfLoop.facingFaceOnTarget = originalHalfLoop.facingFaceOnTarget;
                     correspondingPostprocessableSlot.halfLoops[face.face] = postprocessableHalfLoop;
+                }
+                else
+                {
+                    correspondingPostprocessableSlot.halfLoops[face.face] = new Postprocessing.PostprocessableMap.SlotHalfLoop{
+                        targetSlotIndex = -1,
+                        targetSlot = null,
+                        // facingFaceOnTarget is unset and should not be used
+                    };
                 }
             }
         }
@@ -462,6 +471,7 @@ public class GridPlacer : MonoBehaviour
                 prefab = null,
                 mesh = null,
                 flipIndices = false,
+                yawIndex = 0,
                 sourceVoxels = slot.sourceVoxels,
 
                 v000 = Vector3.Scale(slot.V000, tileset.TileDimensions),
@@ -499,6 +509,7 @@ public class GridPlacer : MonoBehaviour
             prefab = module.prefab,
             mesh = module.mesh,
             flipIndices = transformedModule.isFlipped,
+            yawIndex = transformedModule.yawIndex,
             moduleName = $"Wildtile Mesh Instance ({module.name} yaw {transformedModule.yawIndex * 90}{(transformedModule.isFlipped ? " (flipped)" : "")})",
             sourceVoxels = slot.sourceVoxels,
 
