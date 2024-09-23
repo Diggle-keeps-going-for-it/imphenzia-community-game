@@ -135,7 +135,17 @@ namespace CarbideFunction.Wildtile
                     var slot = slotGrid.SlotData[thisLayerSlotIndex];
                     var slotAbove = slotGrid.SlotData[aboveLayerSlotIndex];
 
-                    SetVerticalHalfLoops(slot, slotAbove);
+                    slot.halfLoops.up = new SlotHalfLoop{
+                        targetSlot = slotAbove,
+                        targetSlotIndex = aboveLayerSlotIndex,
+                        facingFaceOnTarget = Face.Down,
+                    };
+                    slotAbove.halfLoops.down = new SlotHalfLoop
+                    {
+                        targetSlot = slot,
+                        targetSlotIndex = thisLayerSlotIndex,
+                        facingFaceOnTarget = Face.Up,
+                    };
                 }
             }
 
@@ -143,26 +153,6 @@ namespace CarbideFunction.Wildtile
             {
                 SearchForHorizontallyAdjacentSlots(voxelGrid, singleLayerSlotIndex, slotGrid);
             }
-        }
-
-        private static void SetVerticalHalfLoops
-        (
-            Slot slotBelow,
-            Slot slotAbove
-        )
-        {
-            Assert.IsNotNull(slotBelow);
-            Assert.IsNotNull(slotAbove);
-
-            slotBelow.halfLoops.up = new SlotHalfLoop{
-                targetSlot = slotAbove,
-                facingFaceOnTarget = Face.Down,
-            };
-
-            slotAbove.halfLoops.down = new SlotHalfLoop{
-                targetSlot = slotBelow,
-                facingFaceOnTarget = Face.Up,
-            };
         }
 
         private struct AdjacentSlot
@@ -212,7 +202,7 @@ namespace CarbideFunction.Wildtile
                     var destinationSlotIndex = firstSlotInLayerIndex + forwardAdjacentSlot.slotIndex;
                     var destinationSlot = slotGrid.SlotData[destinationSlotIndex];
 
-                    SetHorizontalHalfLoops(sourceSlot, direction, destinationSlot, forwardAdjacentSlot.receivingFace);
+                    SetHorizontalHalfLoops(sourceSlot, sourceSlotIndex, direction, destinationSlot, destinationSlotIndex, forwardAdjacentSlot.receivingFace);
                 }
             }
         }
@@ -220,8 +210,10 @@ namespace CarbideFunction.Wildtile
         private static void SetHorizontalHalfLoops
         (
             Slot slot0,
+            int slot0Index,
             Face face0,
             Slot slot1,
+            int slot1Index,
             Face face1
         )
         {
@@ -230,11 +222,13 @@ namespace CarbideFunction.Wildtile
 
             slot0.halfLoops[face0] = new SlotHalfLoop{
                 targetSlot = slot1,
+                targetSlotIndex = slot1Index,
                 facingFaceOnTarget = face1,
             };
 
             slot1.halfLoops[face1] = new SlotHalfLoop{
                 targetSlot = slot0,
+                targetSlotIndex = slot0Index,
                 facingFaceOnTarget = face0,
             };
         }
