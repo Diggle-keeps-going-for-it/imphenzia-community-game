@@ -50,7 +50,6 @@ namespace TopDownShooter
 
         //temporal vars
         private float _gravity;
-        private bool _invertedControl;
         private Vector3 _move;
 
         public bool IsMoving => _move != Vector3.zero;
@@ -72,13 +71,6 @@ namespace TopDownShooter
             //this is for normal movement
             Horizontal = PlayerController.GetHorizontalValue();
             Vertical = PlayerController.GetVerticalValue();
-
-            //this invert controls 
-            if (_invertedControl)
-            {
-                Horizontal *= -1;
-                Vertical *= -1;
-            }
 
             //if player can control the character
             if (!CanControl)
@@ -153,16 +145,6 @@ namespace TopDownShooter
             RunningSpeed = speed;
         }
 
-        //invert player control(like a confuse skill)
-        public void InvertPlayerControls(float invertTime)
-        {
-            //check if not are already inverted
-            if (!_invertedControl)
-            {
-                StartCoroutine(InvertControls(invertTime));
-            }
-        }
-
         //Animation
 
         #region Animator
@@ -201,14 +183,6 @@ namespace TopDownShooter
             CanControl = true;
             //animate hear to false
             Gravity = _gravity;
-        }
-
-        private IEnumerator InvertControls(float invertTime)
-        {
-            yield return new WaitForSeconds(0.1f);
-            _invertedControl = true;
-            yield return new WaitForSeconds(invertTime);
-            _invertedControl = false;
         }
 
         #endregion
