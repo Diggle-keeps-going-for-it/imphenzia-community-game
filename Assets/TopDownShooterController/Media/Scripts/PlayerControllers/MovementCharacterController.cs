@@ -49,10 +49,8 @@ namespace TopDownShooter
         private Vector3 _right;
 
         //temporal vars
-        private float _originalRunningSpeed;
         private float _gravity;
         private bool _invertedControl;
-        private Vector3 _hitNormal;
         private Vector3 _move;
 
         public bool IsMoving => _move != Vector3.zero;
@@ -60,7 +58,6 @@ namespace TopDownShooter
         private void Awake()
         {
             _controller = GetComponent<CharacterController>();
-            _originalRunningSpeed = RunningSpeed;
         }
 
         private void Start()
@@ -150,21 +147,10 @@ namespace TopDownShooter
                     Mathf.Abs(PlayerController.MovCharController.Vertical2) > value);
         }
 
-        public void ResetOriginalSpeed()
-        {
-            RunningSpeed = _originalRunningSpeed;
-        }
-
         //change the speed for the player
         public void ChangeSpeed(float speed)
         {
             RunningSpeed = speed;
-        }
-
-        //change the speed for the player for a time period
-        public void ChangeSpeedInTime(float speedPlus, float time)
-        {
-            StartCoroutine(ModifySpeedByTime(speedPlus, time));
         }
 
         //invert player control(like a confuse skill)
@@ -177,10 +163,6 @@ namespace TopDownShooter
             }
         }
 
-        private void OnControllerColliderHit(ControllerColliderHit hit)
-        {
-            _hitNormal = hit.normal;
-        }
         //Animation
 
         #region Animator
@@ -219,22 +201,6 @@ namespace TopDownShooter
             CanControl = true;
             //animate hear to false
             Gravity = _gravity;
-        }
-
-        //modify speed by time coroutine.
-        private IEnumerator ModifySpeedByTime(float speedPlus, float time)
-        {
-            if (RunningSpeed + speedPlus > 0)
-            {
-                RunningSpeed += speedPlus;
-            }
-            else
-            {
-                RunningSpeed = 0;
-            }
-
-            yield return new WaitForSeconds(time);
-            RunningSpeed = _originalRunningSpeed;
         }
 
         private IEnumerator InvertControls(float invertTime)
