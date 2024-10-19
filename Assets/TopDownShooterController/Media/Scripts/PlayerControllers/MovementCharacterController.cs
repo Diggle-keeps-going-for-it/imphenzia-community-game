@@ -102,11 +102,7 @@ namespace TopDownShooter
             _forward = _forward.normalized;
             _right = new Vector3(_forward.z, 0.0f, -_forward.x);
 
-            var rawMovementInput = new Vector2(Horizontal, Vertical);
-            var movementMagnitude = rawMovementInput.magnitude;
-            var targetMovementMagnitude = Mathf.Min(rawMovementInput.magnitude, 1f);
-            var targetMagnitudeScale = targetMovementMagnitude / movementMagnitude;
-            var cappedMovementInput = rawMovementInput * targetMagnitudeScale;
+            Vector2 cappedMovementInput = GetCappedMovementInput();
 
             _move = (cappedMovementInput.x * _right + cappedMovementInput.y * _forward);
 
@@ -135,6 +131,16 @@ namespace TopDownShooter
             {
                 _controller.Move(_velocity * Time.fixedDeltaTime);
             }
+        }
+
+        private Vector2 GetCappedMovementInput()
+        {
+            var rawMovementInput = new Vector2(Horizontal, Vertical);
+            var movementMagnitude = rawMovementInput.magnitude;
+            var targetMovementMagnitude = Mathf.Min(rawMovementInput.magnitude, 1f);
+            var targetMagnitudeScale = targetMovementMagnitude / movementMagnitude;
+            var cappedMovementInput = rawMovementInput * targetMagnitudeScale;
+            return cappedMovementInput;
         }
 
         //This check how much the player are pushing the fire stick
