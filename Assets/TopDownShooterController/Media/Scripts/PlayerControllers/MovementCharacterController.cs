@@ -102,9 +102,13 @@ namespace TopDownShooter
             _forward = _forward.normalized;
             _right = new Vector3(_forward.z, 0.0f, -_forward.x);
 
-            _move = (Horizontal * _right + Vertical * _forward);
+            var rawMovementInput = new Vector2(Horizontal, Vertical);
+            var movementMagnitude = rawMovementInput.magnitude;
+            var targetMovementMagnitude = Mathf.Min(rawMovementInput.magnitude, 1f);
+            var targetMagnitudeScale = targetMovementMagnitude / movementMagnitude;
+            var cappedMovementInput = rawMovementInput * targetMagnitudeScale;
 
-            _move.Normalize();
+            _move = (cappedMovementInput.x * _right + cappedMovementInput.y * _forward);
 
             //move the player if no is active the slow fall(this avoid change the speed for the fall)
             if (_controller.enabled)
