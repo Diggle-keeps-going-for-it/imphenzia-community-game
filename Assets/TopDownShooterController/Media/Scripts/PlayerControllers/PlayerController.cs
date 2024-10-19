@@ -20,40 +20,13 @@ namespace TopDownShooter
         [Tooltip("This is the layer for the ground.")]
         public LayerMask GroundLayer;
 
-        [Header("Use virtualJoystick to control the player")]
-        public bool UseVirtualJoyStick;
-
-        public Joystick JoystickControllerLeft;
-        public Joystick JoystickControllerRight;
-
-        private void Awake()
-        {
-            //avoid use more than one control at the same time
-            if (UseMouseToRotate)
-            {
-                UseVirtualJoyStick = false;
-            }
-
-            CheckForVirtualJoystick();
-        }
-
         public float GetHorizontalValue()
         {
-            if (UseVirtualJoyStick)
-            {
-                return JoystickControllerLeft.Horizontal;
-            }
-
             return Input.GetAxis("Horizontal");
         }
 
         public float GetVerticalValue()
         {
-            if (UseVirtualJoyStick)
-            {
-                return JoystickControllerLeft.Vertical;
-            }
-
             return Input.GetAxis("Vertical");
         }
 
@@ -62,11 +35,6 @@ namespace TopDownShooter
             if (UseMouseToRotate)
             {
                 return GetMouseDirection().x;
-            }
-
-            if (UseVirtualJoyStick)
-            {
-                return JoystickControllerRight.Horizontal;
             }
 
             //if you go to use a joystick like a Xbox joystick replace "GetMouseDirection().x" put you new Horizontal axis in this place and uncheck mouse and virtual joystick like this:
@@ -79,11 +47,6 @@ namespace TopDownShooter
             if (UseMouseToRotate)
             {
                 return GetMouseDirection().z;
-            }
-
-            if (UseVirtualJoyStick)
-            {
-                return JoystickControllerRight.Vertical;
             }
 
             //if you go to use a joystick like a Xbox joystick replace "Input.GetAxis("Vertical")" put you new Vertical axis in this place and uncheck mouse and virtual joystick like this:
@@ -139,35 +102,6 @@ namespace TopDownShooter
             }
 
             return Vector3.zero;
-        }
-
-        //hide or show virtualJoystick if exist
-        private void CheckForVirtualJoystick()
-        {
-            if (UseVirtualJoyStick)
-            {
-                if (JoystickControllerLeft)
-                {
-                    JoystickControllerLeft.gameObject.SetActive(true);
-                }
-
-                if (JoystickControllerRight)
-                {
-                    JoystickControllerRight.gameObject.SetActive(true);
-                }
-            }
-            else
-            {
-                if (JoystickControllerLeft)
-                {
-                    JoystickControllerLeft.gameObject.SetActive(false);
-                }
-
-                if (JoystickControllerRight)
-                {
-                    JoystickControllerRight.gameObject.SetActive(false);
-                }
-            }
         }
     }
 }
