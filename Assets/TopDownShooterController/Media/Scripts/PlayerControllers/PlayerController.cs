@@ -88,13 +88,14 @@ namespace TopDownShooter
         public Vector3 GetMouseDirection()
         {
             if (Camera.main == null) return Vector3.zero;
-            var newRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit groundHit;
+            var mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            var planeAtFeet = new Plane(Vector3.up, transform.position.y);
 
             //check if the player press mouse button and the ray hit the ground
-            if (Input.GetMouseButton(0) && Physics.Raycast(newRay, out groundHit, 1000, GroundLayer))
+            if (planeAtFeet.Raycast(mouseRay, out var groundHitDistance))
             {
-                var playerToMouse = groundHit.point - transform.position;
+                var hitPoint = mouseRay.GetPoint(groundHitDistance);
+                var playerToMouse = hitPoint - transform.position;
 
                 playerToMouse.y = 0f;
 
