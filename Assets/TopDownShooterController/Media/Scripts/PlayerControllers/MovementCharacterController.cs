@@ -109,7 +109,7 @@ namespace TopDownShooter
             //move the player if no is active the slow fall(this avoid change the speed for the fall)
             if (_controller.enabled)
             {
-                _controller.Move(Time.deltaTime * RunningSpeed * _move);
+                _controller.Move(Time.fixedDeltaTime * RunningSpeed * _move);
             }
 
             if (_move != Vector3.zero)
@@ -120,16 +120,16 @@ namespace TopDownShooter
             //gravity force
             if (_velocity.y >= -MaxDownYVelocity)
             {
-                _velocity.y += Gravity * Time.deltaTime;
+                _velocity.y += Gravity * Time.fixedDeltaTime;
             }
 
-            _velocity.x /= 1 + DragForce.x * Time.deltaTime;
-            _velocity.y /= 1 + DragForce.y * Time.deltaTime;
-            _velocity.z /= 1 + DragForce.z * Time.deltaTime;
+            _velocity.x /= 1 + DragForce.x * Time.fixedDeltaTime;
+            _velocity.y /= 1 + DragForce.y * Time.fixedDeltaTime;
+            _velocity.z /= 1 + DragForce.z * Time.fixedDeltaTime;
 
             if (_controller.enabled)
             {
-                _controller.Move(_velocity * Time.deltaTime);
+                _controller.Move(_velocity * Time.fixedDeltaTime);
             }
         }
 
