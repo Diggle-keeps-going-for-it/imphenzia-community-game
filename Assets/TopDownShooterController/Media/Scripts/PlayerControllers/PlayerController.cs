@@ -14,9 +14,6 @@ namespace TopDownShooter
         public ShooterController ShooterController;
         public SwimmingController SwimmingController;
 
-        [Header("Use mouse to shoot and rotate player")]
-        public bool UseMouseToRotate = true;
-
         [Tooltip("This is the layer for the ground.")]
         public LayerMask GroundLayer;
 
@@ -32,27 +29,12 @@ namespace TopDownShooter
 
         public float GetHorizontal2Value()
         {
-            if (UseMouseToRotate)
-            {
-                return GetMouseDirection().x;
-            }
-
-            //if you go to use a joystick like a Xbox joystick replace "GetMouseDirection().x" put you new Horizontal axis in this place and uncheck mouse and virtual joystick like this:
-            //return Input.GetAxis("NewControlAxis");
-            return Input.GetAxis("Horizontal");
+            return GetMouseDirection().x;
         }
 
         public float GetVertical2Value()
         {
-            if (UseMouseToRotate)
-            {
-                return GetMouseDirection().z;
-            }
-
-            //if you go to use a joystick like a Xbox joystick replace "Input.GetAxis("Vertical")" put you new Vertical axis in this place and uncheck mouse and virtual joystick like this:
-            //return Input.GetAxis("NewControlAxis");
-
-            return Input.GetAxis("Vertical");
+            return GetMouseDirection().z;
         }
 
         public bool GetGrabThrowValue()
