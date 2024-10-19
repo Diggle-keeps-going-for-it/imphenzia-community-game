@@ -31,9 +31,6 @@ namespace TopDownShooter
 
         public Animator PlayerAnimator;
 
-        [Header("Effects")] [Tooltip("This position is in the character feet and is use to instantiate effects.")]
-        public Transform LowZonePosition;
-
         public PlayerController PlayerController;
 
         //Input.
