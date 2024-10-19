@@ -26,9 +26,6 @@ namespace TopDownShooter
         public Joystick JoystickControllerLeft;
         public Joystick JoystickControllerRight;
 
-        private bool _activeJetPack;
-        private bool _activeSlowFall;
-
         private void Awake()
         {
             //avoid use more than one control at the same time
@@ -115,32 +112,6 @@ namespace TopDownShooter
             return Input.GetKeyDown(KeyCode.F);
         }
 
-        public bool GetJetPackValue()
-        {
-            if (UseVirtualJoyStick)
-            {
-                return _activeJetPack;
-            }
-
-            return Input.GetKey(KeyCode.X);
-        }
-
-        public bool GetSlowFallValue()
-        {
-            if (UseVirtualJoyStick)
-            {
-                if (!_activeSlowFall)
-                {
-                    return false;
-                }
-
-                _activeSlowFall = false;
-                return true;
-            }
-
-            return Input.GetKeyDown(KeyCode.V);
-        }
-
         public bool GetDropWeaponValue()
         {
             return Input.GetKeyDown(KeyCode.G);
@@ -149,20 +120,6 @@ namespace TopDownShooter
         public bool GetReloadWeaponValue()
         {
             return Input.GetKeyDown(KeyCode.R);
-        }
-
-        public void ActivateJetPack(bool active)
-        {
-            _activeJetPack = active;
-        }
-
-        public void ActivateSlowFall()
-        {
-            _activeSlowFall = true;
-        }
-        public void DeActivateSlowFall()
-        {
-            _activeSlowFall = false;
         }
 
         public Vector3 GetMouseDirection()
