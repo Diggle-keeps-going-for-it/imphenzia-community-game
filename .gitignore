@@ -97,3 +97,8 @@ mono_crash.*
 # vim swap files
 *.swp
 *.swo
+
+### python
+*.pyc
+*.pyd
+*.pyo

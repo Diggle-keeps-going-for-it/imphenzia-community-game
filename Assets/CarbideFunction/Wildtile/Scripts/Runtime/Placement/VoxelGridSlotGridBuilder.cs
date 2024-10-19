@@ -215,37 +215,37 @@ namespace CarbideFunction.Wildtile
                         if (x > 0)
                         {
                             var targetIndex = new Vector3Int(x-1, y, z).ToFlatArrayIndex(dimensions);
-                            slotData[slotIndex].halfLoops[Face.Left] = new SlotHalfLoop{targetSlot = slotData[targetIndex], facingFaceOnTarget = Face.Right};
+                            slotData[slotIndex].halfLoops[Face.Left] = new SlotHalfLoop{targetSlotIndex = targetIndex, targetSlot = slotData[targetIndex], facingFaceOnTarget = Face.Right};
                         }
 
                         if (x < dimensions.x - 1)
                         {
                             var targetIndex = new Vector3Int(x+1, y, z).ToFlatArrayIndex(dimensions);
-                            slotData[slotIndex].halfLoops[Face.Right] = new SlotHalfLoop{targetSlot = slotData[targetIndex], facingFaceOnTarget = Face.Left};
+                            slotData[slotIndex].halfLoops[Face.Right] = new SlotHalfLoop{targetSlotIndex = targetIndex, targetSlot = slotData[targetIndex], facingFaceOnTarget = Face.Left};
                         }
 
                         if (y > 0)
                         {
                             var targetIndex = new Vector3Int(x, y-1, z).ToFlatArrayIndex(dimensions);
-                            slotData[slotIndex].halfLoops[Face.Down] = new SlotHalfLoop{targetSlot = slotData[targetIndex], facingFaceOnTarget = Face.Up};
+                            slotData[slotIndex].halfLoops[Face.Down] = new SlotHalfLoop{targetSlotIndex = targetIndex, targetSlot = slotData[targetIndex], facingFaceOnTarget = Face.Up};
                         }
 
                         if (y < dimensions.y - 1)
                         {
                             var targetIndex = new Vector3Int(x, y+1, z).ToFlatArrayIndex(dimensions);
-                            slotData[slotIndex].halfLoops[Face.Up] = new SlotHalfLoop{targetSlot = slotData[targetIndex], facingFaceOnTarget = Face.Down};
+                            slotData[slotIndex].halfLoops[Face.Up] = new SlotHalfLoop{targetSlotIndex = targetIndex, targetSlot = slotData[targetIndex], facingFaceOnTarget = Face.Down};
                         }
 
                         if (z > 0)
                         {
                             var targetIndex = new Vector3Int(x, y, z-1).ToFlatArrayIndex(dimensions);
-                            slotData[slotIndex].halfLoops[Face.Back] = new SlotHalfLoop{targetSlot = slotData[targetIndex], facingFaceOnTarget = Face.Forward};
+                            slotData[slotIndex].halfLoops[Face.Back] = new SlotHalfLoop{targetSlotIndex = targetIndex, targetSlot = slotData[targetIndex], facingFaceOnTarget = Face.Forward};
                         }
 
                         if (z < dimensions.z - 1)
                         {
                             var targetIndex = new Vector3Int(x, y, z+1).ToFlatArrayIndex(dimensions);
-                            slotData[slotIndex].halfLoops[Face.Forward] = new SlotHalfLoop{targetSlot = slotData[targetIndex], facingFaceOnTarget = Face.Back};
+                            slotData[slotIndex].halfLoops[Face.Forward] = new SlotHalfLoop{targetSlotIndex = targetIndex, targetSlot = slotData[targetIndex], facingFaceOnTarget = Face.Back};
                         }
                     }
                 }

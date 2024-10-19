@@ -8,6 +8,7 @@ namespace CarbideFunction.Wildtile
 
 internal class SlotHalfLoop
 {
+    public int targetSlotIndex;
     public Slot targetSlot;
     public Face facingFaceOnTarget;
 
