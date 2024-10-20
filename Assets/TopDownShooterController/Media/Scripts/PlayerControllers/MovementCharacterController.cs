@@ -49,7 +49,6 @@ namespace TopDownShooter
 
         private void Start()
         {
-            _gravity = Gravity;
         }
 
         private void Update()
