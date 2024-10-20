@@ -36,10 +36,6 @@ namespace TopDownShooter
 
         public PlayerController PlayerController;
 
-        //Input.
-        public float Horizontal2;
-        public float Vertical2;
-
         [SerializeField] private float rotationSpeed = 0.6f;
 
         //private vars
@@ -132,13 +128,6 @@ namespace TopDownShooter
             var targetMagnitudeScale = targetMovementMagnitude / movementMagnitude;
             var cappedMovementInput = rawMovementInput * targetMagnitudeScale;
             return cappedMovementInput;
-        }
-
-        //This check how much the player are pushing the fire stick
-        public bool TensionFoRightStickLowerThan(float value)
-        {
-            return (Mathf.Abs(PlayerController.MovCharController.Horizontal2) > value ||
-                    Mathf.Abs(PlayerController.MovCharController.Vertical2) > value);
         }
 
         //change the speed for the player
