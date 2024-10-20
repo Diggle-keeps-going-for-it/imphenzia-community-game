@@ -19,7 +19,7 @@ namespace TopDownShooter
         private Vector2 LookDirection { get; set; }
         private Vector2 CursorPosition { get; set; }
 
-        private bool isUsingKeyboardAndMouse;
+        private bool isUsingKeyboardAndMouse = true;
 
         public float GetHorizontalValue()
         {
