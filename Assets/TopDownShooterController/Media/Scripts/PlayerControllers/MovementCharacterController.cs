@@ -40,15 +40,10 @@ namespace TopDownShooter
 
         //private vars
         private CharacterController _controller;
-        private Vector3 _velocity;
 
         private void Awake()
         {
             _controller = GetComponent<CharacterController>();
-        }
-
-        private void Start()
-        {
         }
 
         private void Update()
