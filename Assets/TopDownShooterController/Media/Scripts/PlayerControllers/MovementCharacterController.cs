@@ -47,7 +47,6 @@ namespace TopDownShooter
         private Vector3 _velocity;
 
         //get direction for the camera
-        private Transform _cameraTransform;
         private Vector3 _forward;
         private Vector3 _right;
 
@@ -61,7 +60,6 @@ namespace TopDownShooter
 
         private void Start()
         {
-            if (Camera.main != null) _cameraTransform = Camera.main.transform;
             _gravity = Gravity;
         }
 
@@ -86,7 +84,7 @@ namespace TopDownShooter
         private void FixedUpdate()
         {
             //get the input direction for the camera position.
-            _forward = _cameraTransform.TransformDirection(Vector3.forward);
+            _forward = Camera.main.transform.TransformDirection(Vector3.forward);
             _forward.y = 0f;
             _forward = _forward.normalized;
             _right = new Vector3(_forward.z, 0.0f, -_forward.x);
