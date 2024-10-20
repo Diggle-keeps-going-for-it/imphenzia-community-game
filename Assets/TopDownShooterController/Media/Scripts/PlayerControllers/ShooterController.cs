@@ -301,20 +301,12 @@ namespace TopDownShooter
             }
             else
             {
-                //avoid change animations on swimming and keep weapon to 
-                if (PlayerController.SwimmingController.Swimming)
-                {
-                    PlayerController.SwimmingController.CurrentIndexWeapon = weaponIndex;
-                }
-                else
-                {
-                    //if exist switch to weapon type
-                    _currentWeapon = Instantiate(WeaponData.Weapons[weaponIndex].WeaponPrefab, WeaponPosition.position,
-                        WeaponPosition.rotation, WeaponPosition);
-                    CurrentWeaponClass = WeaponData.Weapons[weaponIndex].WeaponClass;
-                    CurrentBulletsId = WeaponData.Weapons[weaponIndex].BulletId;
-                    SwitchAnimation(WeaponData.Weapons[weaponIndex].WeaponClass);
-                }
+                //if exist switch to weapon type
+                _currentWeapon = Instantiate(WeaponData.Weapons[weaponIndex].WeaponPrefab, WeaponPosition.position,
+                    WeaponPosition.rotation, WeaponPosition);
+                CurrentWeaponClass = WeaponData.Weapons[weaponIndex].WeaponClass;
+                CurrentBulletsId = WeaponData.Weapons[weaponIndex].BulletId;
+                SwitchAnimation(WeaponData.Weapons[weaponIndex].WeaponClass);
             }
         }
 
@@ -502,11 +494,6 @@ namespace TopDownShooter
         {
             _reloading = true;
             yield return new WaitForSeconds(reloadTime);
-            if (PlayerController.SwimmingController.Swimming)
-            {
-                _reloading = false;
-                yield break;
-            }
 
             var bulletNeeded = BulletNeededToReload();
             //if have enough bullet in pocket fulfill the weapon 
