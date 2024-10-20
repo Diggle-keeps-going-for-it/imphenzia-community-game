@@ -9,32 +9,18 @@ using UnityEngine.InputSystem;
 
 namespace TopDownShooter
 {
-    public class PlayerController : MonoBehaviour, PlayerControls.ITopdownActions
+    public class PlayerController : MonoBehaviour
     {
         public MovementCharacterController MovCharController;
         public ShooterController ShooterController;
 
-        private PlayerControls playerControls;
+        [SerializeField] private string keyboardAndMouseControlSchemeName = "Keyboard and Mouse";
 
         public Vector2 Movement { get; private set; }
         private Vector2 LookDirection { get; set; }
         private Vector2 CursorPosition { get; set; }
 
-        private void Awake()
-        {
-            playerControls = new();
-            playerControls.Topdown.AddCallbacks(this);
-        }
-
-        private void OnEnable()
-        {
-            playerControls.Enable();
-        }
-
-        private void OnDisable()
-        {
-            playerControls.Disable();
-        }
+        private bool isUsingKeyboardAndMouse;
 
         public float GetHorizontalValue()
         {
@@ -48,7 +34,7 @@ namespace TopDownShooter
 
         public Vector2 GetLookDirection(Camera camera, Transform player)
         {
-            if (IsUsingKeyboardAndMouse())
+            if (isUsingKeyboardAndMouse)
             {
                 var maybeMouseDirection = GetMouseDirection(camera, player);
                 if (maybeMouseDirection is Vector2 mouseDirection)
@@ -58,11 +44,6 @@ namespace TopDownShooter
             }
 
             return LookDirection;
-        }
-
-        private bool IsUsingKeyboardAndMouse()
-        {
-            return true;
         }
 
         public bool GetGrabThrowValue()
@@ -127,6 +108,11 @@ namespace TopDownShooter
         public void OnCursorLook(InputAction.CallbackContext context)
         {
             CursorPosition = context.ReadValue<Vector2>();
+        }
+
+        public void OnControlsChanged(PlayerInput playerInput)
+        {
+            isUsingKeyboardAndMouse = playerInput.currentControlScheme == keyboardAndMouseControlSchemeName;
         }
     }
 }
