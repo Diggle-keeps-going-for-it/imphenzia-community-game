@@ -7,8 +7,7 @@ namespace TopDownShooter
 {
     public class MovementCharacterController : MonoBehaviour
     {
-        [Header("Player Controller Settings")] [Tooltip("Speed for the player.")]
-        public float RunningSpeed = 5f;
+        [SerializeField] [FormerlySerializedAs("RunningSpeed")] public float runningSpeed = 5f;
 
         [SerializeField] [Range(0f, 1f)] private float lookDirectionDeadzone = 0.1f;
         [SerializeField] [Range(0f, 1f)] private float moveDirectionToLookDeadzone = 0f;
@@ -31,7 +30,7 @@ namespace TopDownShooter
         {
             var worldRelativeMovementInput = GetWorldRelativeCappedMovementInput();
 
-            controller.Move(Time.fixedDeltaTime * RunningSpeed * worldRelativeMovementInput);
+            controller.Move(Time.fixedDeltaTime * runningSpeed * worldRelativeMovementInput);
         }
 
         private void RotateCharacter(Vector3 movementInputInWorldSpace)
