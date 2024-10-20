@@ -13,7 +13,7 @@ namespace TopDownShooter
         [SerializeField] [Range(0f, 1f)] private float lookDirectionDeadzone = 0.1f;
         [SerializeField] [Range(0f, 1f)] private float moveDirectionToLookDeadzone = 0f;
 
-        public Animator PlayerAnimator;
+        [SerializeField] [FormerlySerializedAs("PlayerAnimator")] private Animator playerAnimator;
 
         [SerializeField] [FormerlySerializedAs("PlayerController")] private PlayerController playerController;
         [SerializeField] private CharacterController controller;
@@ -85,7 +85,7 @@ namespace TopDownShooter
 
         private void SetRunningAnimation(bool run)
         {
-            PlayerAnimator.SetBool("Running", run);
+            playerAnimator.SetBool("Running", run);
         }
     }
 }
