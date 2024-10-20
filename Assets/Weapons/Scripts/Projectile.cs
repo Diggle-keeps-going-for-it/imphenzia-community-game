@@ -15,8 +15,14 @@ public class Projectile : MonoBehaviour
 
     public void Initialize(Vector3 position, Vector3 velocity)
     {
-        this.nextPosition = position;
         this.velocity = velocity;
+
+        var timeSinceLastFixedUpdate = Time.time - Time.fixedTime;
+        var proportionThroughUpdate = timeSinceLastFixedUpdate / Time.fixedDeltaTime;
+        var proportionToNextUpdate = 1f - proportionThroughUpdate;
+        this.nextPosition = position + velocity * proportionToNextUpdate;
+
+        transform.position = position;
     }
 
     private void Update()
