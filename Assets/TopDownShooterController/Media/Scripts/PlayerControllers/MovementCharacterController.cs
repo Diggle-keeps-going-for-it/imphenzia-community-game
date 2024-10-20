@@ -41,25 +41,17 @@ namespace TopDownShooter
 
         private void Update()
         {
+            var worldRelativeMovementInput = GetWorldRelativeCappedMovementInput();
+            RotateCharacter(worldRelativeMovementInput);
             SetRunningAnimation(PlayerController.Movement.sqrMagnitude > 0);
         }
 
         private void FixedUpdate()
         {
             //get the input direction for the camera position.
-            var forward = Camera.main.transform.TransformDirection(Vector3.forward);
-            forward.y = 0f;
-            forward = forward.normalized;
-            var right = new Vector3(forward.z, 0.0f, -forward.x);
-
-            var rawMovementInput = new Vector2(PlayerController.GetHorizontalValue(), PlayerController.GetVerticalValue());
-            Vector2 cappedMovementInput = GetCappedMovementInput(rawMovementInput);
-
-            var worldRelativeMovementInput = (cappedMovementInput.x * right + cappedMovementInput.y * forward);
+            var worldRelativeMovementInput = GetWorldRelativeCappedMovementInput();
 
             controller.Move(Time.fixedDeltaTime * RunningSpeed * worldRelativeMovementInput);
-
-            RotateCharacter(worldRelativeMovementInput);
         }
 
         private void RotateCharacter(Vector3 movementInputInWorldSpace)
@@ -80,16 +72,35 @@ namespace TopDownShooter
 
         private void RotateTowards(Vector3 newForward)
         {
-            transform.forward = Vector3.Lerp(transform.forward, newForward.normalized, rotationSpeed);
+            var originalAngle = transform.eulerAngles.y;
+            var targetAngle = Mathf.Rad2Deg * Mathf.Atan2(newForward.x, newForward.z);
+            var newAngle = Mathf.MoveTowardsAngle(originalAngle, targetAngle, rotationSpeed * Time.deltaTime);
+            transform.eulerAngles = Vector3.up * newAngle;
         }
 
-        private Vector2 GetCappedMovementInput(Vector2 rawMovementInput)
+        private Vector3 GetWorldRelativeCappedMovementInput()
         {
+            var rawMovementInput = new Vector2(PlayerController.GetHorizontalValue(), PlayerController.GetVerticalValue());
+
+            if (rawMovementInput.sqrMagnitude == 0f)
+            {
+                // if there's no input then the following calculations include a divide-by-zero
+                return Vector3.zero;
+            }
+
+            var forward = Camera.main.transform.TransformDirection(Vector3.forward);
+            forward.y = 0f;
+            forward = forward.normalized;
+            var right = new Vector3(forward.z, 0.0f, -forward.x);
+
             var movementMagnitude = rawMovementInput.magnitude;
             var targetMovementMagnitude = Mathf.Min(rawMovementInput.magnitude, 1f);
             var targetMagnitudeScale = targetMovementMagnitude / movementMagnitude;
             var cappedMovementInput = rawMovementInput * targetMagnitudeScale;
-            return cappedMovementInput;
+
+            var worldRelativeMovementInput = (cappedMovementInput.x * right + cappedMovementInput.y * forward);
+
+            return worldRelativeMovementInput;
         }
 
         //change the speed for the player

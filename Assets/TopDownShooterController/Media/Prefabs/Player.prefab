@@ -102,7 +102,7 @@ MonoBehaviour:
   PlayerAnimator: {fileID: 1017712750233243903}
   PlayerController: {fileID: 114398787662369770}
   controller: {fileID: 143143434298147042}
-  rotationSpeed: 0.5
+  rotationSpeed: 1000
 --- !u!114 &1326986227001634971
 MonoBehaviour:
   m_ObjectHideFlags: 0
