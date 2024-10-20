@@ -48,7 +48,6 @@ namespace TopDownShooter
 
         private void FixedUpdate()
         {
-            //get the input direction for the camera position.
             var worldRelativeMovementInput = GetWorldRelativeCappedMovementInput();
 
             controller.Move(Time.fixedDeltaTime * RunningSpeed * worldRelativeMovementInput);
@@ -103,21 +102,14 @@ namespace TopDownShooter
             return worldRelativeMovementInput;
         }
 
-        //change the speed for the player
         public void ChangeSpeed(float speed)
         {
             RunningSpeed = speed;
         }
 
-        //Animation
-
-        #region Animator
-
         private void SetRunningAnimation(bool run)
         {
             PlayerAnimator.SetBool("Running", run);
         }
-
-        #endregion
     }
 }
