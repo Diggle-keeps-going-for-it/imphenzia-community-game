@@ -20,10 +20,9 @@ namespace TopDownShooter
         private void OnTriggerEnter(Collider other)
         {
             //add bulletAmount to the player if the player can carry this type of bullet
-            if (!_isTaken && other.CompareTag("Player") && other.GetComponent<PlayerController>().ShooterController)
+            if (!_isTaken && false)
             {
-                var bulletCanBeAdd = other.GetComponent<PlayerController>().ShooterController
-                    .AddBullet(BulletId, BulletAmount);
+                var bulletCanBeAdd = false;
                 if (bulletCanBeAdd)
                 {
                     _isTaken = true;

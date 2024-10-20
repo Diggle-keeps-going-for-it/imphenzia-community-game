@@ -27,9 +27,7 @@ namespace TopDownShooter
         {
             if (other.CompareTag("Player") && !_isTaken)
             {
-                var canBeAdd = other.GetComponent<PlayerController>().ShooterController
-                    .AddWeaponWhitBullets(WeaponIndex, WeaponBulletAmount);
-
+                var canBeAdd = false;
                 if (canBeAdd)
                 {
                     _isTaken = true;

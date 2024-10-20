@@ -12,7 +12,6 @@ namespace TopDownShooter
     public class PlayerController : MonoBehaviour
     {
         public MovementCharacterController MovCharController;
-        public ShooterController ShooterController;
 
         [SerializeField] private string keyboardAndMouseControlSchemeName = "Keyboard and Mouse";
 

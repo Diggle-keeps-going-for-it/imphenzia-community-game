@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 143143434298147042}
   - component: {fileID: 114398787662369770}
   - component: {fileID: 114234455027906282}
-  - component: {fileID: 114374071582259332}
   - component: {fileID: 1326986227001634971}
   m_Layer: 0
   m_Name: Player
@@ -77,7 +76,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovCharController: {fileID: 114234455027906282}
-  ShooterController: {fileID: 114374071582259332}
+  ShooterController: {fileID: 0}
+  keyboardAndMouseControlSchemeName: Keyboard and Mouse
 --- !u!114 &114234455027906282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,40 +105,6 @@ MonoBehaviour:
   Horizontal2: 0
   Vertical2: 0
   rotationSpeed: 0.5
---- !u!114 &114374071582259332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482610530638662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daf90829c7f9fa6409958a70ad990863, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StartWeaponIndex: -1
-  WeaponsBullets: []
-  BulletType:
-  - BulletName: NormalBullet
-    BulletId: 0
-    BulletInPocket: 100
-  - BulletName: SpecialBullet
-    BulletId: 1
-    BulletInPocket: 100
-  - BulletName: Grenade
-    BulletId: 2
-    BulletInPocket: 0
-  MaxPlayerWeapons: 3
-  CurrentDbWeaponIndex: -1
-  CurrentBulletsId: -1
-  CurrentWeaponClass: 0
-  BulletPoint: {fileID: 4763173539692302}
-  WeaponPosition: {fileID: 0}
-  WeaponData: {fileID: 114323996127282120, guid: 44bfa3e1b274b6749969661ed23acd37,
-    type: 3}
-  PlayerController: {fileID: 114398787662369770}
-  DelayToTurnOn: 0
 --- !u!114 &1326986227001634971
 MonoBehaviour:
   m_ObjectHideFlags: 0
