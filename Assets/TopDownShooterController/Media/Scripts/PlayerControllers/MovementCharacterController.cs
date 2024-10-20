@@ -42,12 +42,15 @@ namespace TopDownShooter
         public float Horizontal2;
         public float Vertical2;
 
+        [SerializeField] private float rotationSpeed = 0.6f;
+
         //private vars
         private CharacterController _controller;
         private Vector3 _velocity;
 
         //temporal vars
         private float _gravity;
+
 
         private void Awake()
         {
@@ -132,7 +135,7 @@ namespace TopDownShooter
 
         private void RotateTowards(Vector3 newForward)
         {
-            transform.forward = Vector3.Lerp(transform.forward, newForward.normalized, 0.6f);
+            transform.forward = Vector3.Lerp(transform.forward, newForward.normalized, rotationSpeed);
         }
 
         private Vector2 GetCappedMovementInput()
