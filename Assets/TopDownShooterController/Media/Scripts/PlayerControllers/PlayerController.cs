@@ -100,7 +100,7 @@ namespace TopDownShooter
             if (camera == null) return null;
 
             var mouseRay = camera.ScreenPointToRay(CursorPosition);
-            var planeAtFeet = new Plane(Vector3.up, playerFeet.position.y);
+            var planeAtFeet = new Plane(Vector3.up, -playerFeet.position.y);
 
             //check if the player press mouse button and the ray hit the ground
             if (planeAtFeet.Raycast(mouseRay, out var groundHitDistance))
