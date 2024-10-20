@@ -17,7 +17,7 @@ namespace TopDownShooter
         public PlayerController PlayerController;
         [SerializeField] private CharacterController controller;
 
-        [SerializeField] private float rotationSpeed = 360f;
+        [SerializeField] [Min(0f)] private float rotationSpeed = 360f;
 
         private void Update()
         {
