@@ -70,11 +70,7 @@ namespace TopDownShooter
 
             var worldRelativeMovementInput = (cappedMovementInput.x * right + cappedMovementInput.y * forward);
 
-            //move the player if no is active the slow fall(this avoid change the speed for the fall)
-            if (_controller.enabled)
-            {
-                _controller.Move(Time.fixedDeltaTime * RunningSpeed * worldRelativeMovementInput);
-            }
+            _controller.Move(Time.fixedDeltaTime * RunningSpeed * worldRelativeMovementInput);
 
             RotateCharacter(worldRelativeMovementInput);
         }
