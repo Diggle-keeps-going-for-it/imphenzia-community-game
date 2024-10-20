@@ -21,11 +21,17 @@ namespace TopDownShooter
         [SerializeField] [Min(0f)] private float rotationSpeed = 360f;
         [SerializeField] [Min(0f)] private float acceleration = 10f;
 
+        [SerializeField] private string animatorHorizontalParameter = "Horizontal";
+        [SerializeField] private string animatorVerticalParameter = "Vertical";
+        [SerializeField] private float maxWorldVelocityForAnimation = 5f;
+
         private void Update()
         {
             var worldRelativeMovementInput = GetWorldRelativeCappedMovementInput();
             RotateCharacter(worldRelativeMovementInput);
-            SetRunningAnimation(playerController.Movement.sqrMagnitude > 0);
+            var worldVelocity = body.velocity;
+            var playerRelativeVelocity = rotatableTransform.InverseTransformVector(worldVelocity);
+            ApplyRunningAnimation(playerRelativeVelocity);
         }
 
         private void FixedUpdate()
@@ -89,9 +95,11 @@ namespace TopDownShooter
             return worldRelativeMovementInput;
         }
 
-        private void SetRunningAnimation(bool run)
+        private void ApplyRunningAnimation(Vector3 playerRelativeVelocity)
         {
-            playerAnimator.SetBool("Running", run);
+            var animationScaledVelocity = playerRelativeVelocity / maxWorldVelocityForAnimation;
+            playerAnimator.SetFloat(animatorHorizontalParameter, animationScaledVelocity.x);
+            playerAnimator.SetFloat(animatorVerticalParameter, animationScaledVelocity.z);
         }
     }
 }
