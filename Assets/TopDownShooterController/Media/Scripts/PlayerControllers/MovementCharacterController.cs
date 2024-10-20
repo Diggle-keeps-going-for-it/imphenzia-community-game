@@ -81,7 +81,7 @@ namespace TopDownShooter
                 _controller.Move(Time.fixedDeltaTime * RunningSpeed * worldRelativeMovementInput);
             }
 
-            RotateCharacter();
+            RotateCharacter(worldRelativeMovementInput);
 
             //gravity force
             if (_velocity.y >= -MaxDownYVelocity)
@@ -99,7 +99,7 @@ namespace TopDownShooter
             }
         }
 
-        private void RotateCharacter()
+        private void RotateCharacter(Vector3 movementInputInWorldSpace)
         {
             var lookDirection = PlayerController.GetLookDirection(Camera.main, transform);
             if (lookDirection.sqrMagnitude > lookDirectionDeadzone)
@@ -108,10 +108,9 @@ namespace TopDownShooter
                 return;
             }
 
-            var playerVelocity = new Vector3(PlayerController.GetHorizontalValue(), 0f, PlayerController.GetVerticalValue());
-            if (playerVelocity.sqrMagnitude > moveDirectionToLookDeadzone)
+            if (movementInputInWorldSpace.sqrMagnitude > moveDirectionToLookDeadzone)
             {
-                RotateTowards(playerVelocity);
+                RotateTowards(movementInputInWorldSpace);
                 return;
             }
         }
