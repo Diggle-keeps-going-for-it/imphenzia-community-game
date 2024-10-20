@@ -58,7 +58,6 @@ namespace TopDownShooter
 
         private void Update()
         {
-            //set running animation
             SetRunningAnimation(PlayerController.Movement.sqrMagnitude > 0);
         }
 
