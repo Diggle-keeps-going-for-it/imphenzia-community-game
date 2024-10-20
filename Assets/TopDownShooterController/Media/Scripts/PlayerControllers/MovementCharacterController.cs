@@ -42,10 +42,6 @@ namespace TopDownShooter
         private CharacterController _controller;
         private Vector3 _velocity;
 
-        //temporal vars
-        private float _gravity;
-
-
         private void Awake()
         {
             _controller = GetComponent<CharacterController>();
