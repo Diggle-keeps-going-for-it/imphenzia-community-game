@@ -53,9 +53,6 @@ namespace TopDownShooter
 
         //temporal vars
         private float _gravity;
-        private Vector3 _move;
-
-        public bool IsMoving => _move != Vector3.zero;
 
         private void Awake()
         {
@@ -96,12 +93,12 @@ namespace TopDownShooter
 
             Vector2 cappedMovementInput = GetCappedMovementInput();
 
-            _move = (cappedMovementInput.x * _right + cappedMovementInput.y * _forward);
+            var worldRelativeMovementInput = (cappedMovementInput.x * _right + cappedMovementInput.y * _forward);
 
             //move the player if no is active the slow fall(this avoid change the speed for the fall)
             if (_controller.enabled)
             {
-                _controller.Move(Time.fixedDeltaTime * RunningSpeed * _move);
+                _controller.Move(Time.fixedDeltaTime * RunningSpeed * worldRelativeMovementInput);
             }
 
             RotateCharacter();
@@ -139,7 +136,7 @@ namespace TopDownShooter
 
         private void RotateTowards(Vector3 newForward)
         {
-            transform.forward = Vector3.Lerp(transform.forward, _move, 0.6f);
+            transform.forward = Vector3.Lerp(transform.forward, newForward, 0.6f);
         }
 
         private Vector2 GetCappedMovementInput()
