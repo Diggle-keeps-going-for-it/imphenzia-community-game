@@ -130,7 +130,7 @@ namespace TopDownShooter
 
         private void RotateTowards(Vector3 newForward)
         {
-            transform.forward = Vector3.Lerp(transform.forward, newForward, 0.6f);
+            transform.forward = Vector3.Lerp(transform.forward, newForward.normalized, 0.6f);
         }
 
         private Vector2 GetCappedMovementInput()
