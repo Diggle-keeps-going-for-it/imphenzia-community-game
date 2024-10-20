@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 /* Script to easy setup your own input configurations.
  * You can use the virtual joystick solution in this pack or use another solution.
@@ -8,33 +9,59 @@
 
 namespace TopDownShooter
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour, PlayerControls.ITopdownActions
     {
-        [Header("Scripts reference")] public MovementCharacterController MovCharController;
+        public MovementCharacterController MovCharController;
         public ShooterController ShooterController;
-        public SwimmingController SwimmingController;
 
-        [Tooltip("This is the layer for the ground.")]
-        public LayerMask GroundLayer;
+        private PlayerControls playerControls;
+
+        public Vector2 Movement { get; private set; }
+        public Vector2 LookDirection { get; private set; }
+
+        private void Awake()
+        {
+            playerControls = new();
+            playerControls.Topdown.AddCallbacks(this);
+        }
+
+        private void OnEnable()
+        {
+            playerControls.Enable();
+        }
+
+        private void OnDisable()
+        {
+            playerControls.Disable();
+        }
 
         public float GetHorizontalValue()
         {
-            return Input.GetAxis("Horizontal");
+            return Movement.x;
         }
 
         public float GetVerticalValue()
         {
-            return Input.GetAxis("Vertical");
+            return Movement.y;
         }
 
-        public float GetHorizontal2Value()
+        public Vector2 GetLookDirection(Camera camera, Transform player)
         {
-            return GetMouseDirection().x;
+            if (IsUsingKeyboardAndMouse())
+            {
+                var maybeMouseDirection = GetMouseDirection(camera, player);
+                if (maybeMouseDirection is Vector2 mouseDirection)
+                {
+                    return mouseDirection;
+                }
+            }
+
+            return LookDirection;
         }
 
-        public float GetVertical2Value()
+        private bool IsUsingKeyboardAndMouse()
         {
-            return GetMouseDirection().z;
+            return true;
         }
 
         public bool GetGrabThrowValue()
@@ -67,24 +94,33 @@ namespace TopDownShooter
             return Input.GetKeyDown(KeyCode.R);
         }
 
-        public Vector3 GetMouseDirection()
+        public Vector2? GetMouseDirection(Camera camera, Transform playerFeet)
         {
-            if (Camera.main == null) return Vector3.zero;
-            var mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-            var planeAtFeet = new Plane(Vector3.up, transform.position.y);
+            if (camera == null) return null;
+
+            var mouseRay = camera.ScreenPointToRay(Input.mousePosition);
+            var planeAtFeet = new Plane(Vector3.up, playerFeet.position.y);
 
             //check if the player press mouse button and the ray hit the ground
             if (planeAtFeet.Raycast(mouseRay, out var groundHitDistance))
             {
                 var hitPoint = mouseRay.GetPoint(groundHitDistance);
-                var playerToMouse = hitPoint - transform.position;
+                var playerToMouse = hitPoint - playerFeet.position;
 
-                playerToMouse.y = 0f;
-
-                return playerToMouse;
+                return new Vector2(playerToMouse.x, playerToMouse.z);
             }
 
-            return Vector3.zero;
+            return null;
+        }
+
+        public void OnMovement(InputAction.CallbackContext context)
+        {
+            Movement = context.ReadValue<Vector2>();
+        }
+
+        public void OnLook(InputAction.CallbackContext context)
+        {
+            LookDirection = context.ReadValue<Vector2>();
         }
     }
 }

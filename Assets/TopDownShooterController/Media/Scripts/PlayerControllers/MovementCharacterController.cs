@@ -27,6 +27,9 @@ namespace TopDownShooter
         [Tooltip("Can the user control the player?")]
         public bool CanControl = true;
 
+        [SerializeField] [Range(0f, 1f)] private float lookDirectionDeadzone = 0.1f;
+        [SerializeField] [Range(0f, 1f)] private float moveDirectionToLookDeadzone = 0f;
+
         public Vector3 DragForce;
 
         public Animator PlayerAnimator;
@@ -101,10 +104,7 @@ namespace TopDownShooter
                 _controller.Move(Time.fixedDeltaTime * RunningSpeed * _move);
             }
 
-            if (_move != Vector3.zero)
-            {
-                transform.forward = Vector3.Lerp(transform.forward, _move, 0.6f);
-            }
+            RotateCharacter();
 
             //gravity force
             if (_velocity.y >= -MaxDownYVelocity)
@@ -120,6 +120,26 @@ namespace TopDownShooter
             {
                 _controller.Move(_velocity * Time.fixedDeltaTime);
             }
+        }
+
+        private void RotateCharacter()
+        {
+            var lookDirection = PlayerController.GetLookDirection(Camera.main, transform);
+            if (lookDirection.sqrMagnitude > lookDirectionDeadzone)
+            {
+                RotateTowards(new Vector3(lookDirection.x, 0f, lookDirection.y));
+            }
+
+            var playerVelocity = new Vector3(PlayerController.GetHorizontalValue(), 0f, PlayerController.GetVerticalValue());
+            if (playerVelocity.sqrMagnitude > moveDirectionToLookDeadzone)
+            {
+                RotateTowards(playerVelocity);
+            }
+        }
+
+        private void RotateTowards(Vector3 newForward)
+        {
+            transform.forward = Vector3.Lerp(transform.forward, _move, 0.6f);
         }
 
         private Vector2 GetCappedMovementInput()
