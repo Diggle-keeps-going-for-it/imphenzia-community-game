@@ -64,18 +64,6 @@ namespace TopDownShooter
 
         private void Update()
         {
-            //capture input from direct input
-            //this is for normal movement
-            Horizontal = PlayerController.GetHorizontalValue();
-            Vertical = PlayerController.GetVerticalValue();
-
-            //if player can control the character
-            if (!CanControl)
-            {
-                Horizontal = 0;
-                Vertical = 0;
-            }
-
             //set running animation
             SetRunningAnimation((Math.Abs(Horizontal) > 0 || Math.Abs(Vertical) > 0));
         }
@@ -88,7 +76,8 @@ namespace TopDownShooter
             forward = forward.normalized;
             var right = new Vector3(forward.z, 0.0f, -forward.x);
 
-            Vector2 cappedMovementInput = GetCappedMovementInput();
+            var rawMovementInput = new Vector2(PlayerController.GetHorizontalValue(), PlayerController.GetVerticalValue());
+            Vector2 cappedMovementInput = GetCappedMovementInput(rawMovementInput);
 
             var worldRelativeMovementInput = (cappedMovementInput.x * right + cappedMovementInput.y * forward);
 
@@ -138,9 +127,8 @@ namespace TopDownShooter
             transform.forward = Vector3.Lerp(transform.forward, newForward.normalized, rotationSpeed);
         }
 
-        private Vector2 GetCappedMovementInput()
+        private Vector2 GetCappedMovementInput(Vector2 rawMovementInput)
         {
-            var rawMovementInput = new Vector2(Horizontal, Vertical);
             var movementMagnitude = rawMovementInput.magnitude;
             var targetMovementMagnitude = Mathf.Min(rawMovementInput.magnitude, 1f);
             var targetMagnitudeScale = targetMovementMagnitude / movementMagnitude;
