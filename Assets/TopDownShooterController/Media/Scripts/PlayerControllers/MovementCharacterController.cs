@@ -46,10 +46,6 @@ namespace TopDownShooter
         private CharacterController _controller;
         private Vector3 _velocity;
 
-        //get direction for the camera
-        private Vector3 _forward;
-        private Vector3 _right;
-
         //temporal vars
         private float _gravity;
 
@@ -84,14 +80,14 @@ namespace TopDownShooter
         private void FixedUpdate()
         {
             //get the input direction for the camera position.
-            _forward = Camera.main.transform.TransformDirection(Vector3.forward);
-            _forward.y = 0f;
-            _forward = _forward.normalized;
-            _right = new Vector3(_forward.z, 0.0f, -_forward.x);
+            var forward = Camera.main.transform.TransformDirection(Vector3.forward);
+            forward.y = 0f;
+            forward = forward.normalized;
+            var right = new Vector3(forward.z, 0.0f, -forward.x);
 
             Vector2 cappedMovementInput = GetCappedMovementInput();
 
-            var worldRelativeMovementInput = (cappedMovementInput.x * _right + cappedMovementInput.y * _forward);
+            var worldRelativeMovementInput = (cappedMovementInput.x * right + cappedMovementInput.y * forward);
 
             //move the player if no is active the slow fall(this avoid change the speed for the fall)
             if (_controller.enabled)
