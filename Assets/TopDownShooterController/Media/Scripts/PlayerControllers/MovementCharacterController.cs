@@ -35,16 +35,9 @@ namespace TopDownShooter
         public Animator PlayerAnimator;
 
         public PlayerController PlayerController;
+        [SerializeField] private CharacterController controller;
 
         [SerializeField] private float rotationSpeed = 0.6f;
-
-        //private vars
-        private CharacterController _controller;
-
-        private void Awake()
-        {
-            _controller = GetComponent<CharacterController>();
-        }
 
         private void Update()
         {
@@ -64,7 +57,7 @@ namespace TopDownShooter
 
             var worldRelativeMovementInput = (cappedMovementInput.x * right + cappedMovementInput.y * forward);
 
-            _controller.Move(Time.fixedDeltaTime * RunningSpeed * worldRelativeMovementInput);
+            controller.Move(Time.fixedDeltaTime * RunningSpeed * worldRelativeMovementInput);
 
             RotateCharacter(worldRelativeMovementInput);
         }
