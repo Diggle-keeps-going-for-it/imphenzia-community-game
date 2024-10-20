@@ -15,9 +15,11 @@ namespace TopDownShooter
         [SerializeField] [FormerlySerializedAs("PlayerAnimator")] private Animator playerAnimator;
 
         [SerializeField] [FormerlySerializedAs("PlayerController")] private PlayerController playerController;
-        [SerializeField] private CharacterController controller;
+        [SerializeField] private Rigidbody body;
+        [SerializeField] private Transform rotatableTransform;
 
         [SerializeField] [Min(0f)] private float rotationSpeed = 360f;
+        [SerializeField] [Min(0f)] private float acceleration = 10f;
 
         private void Update()
         {
@@ -30,7 +32,12 @@ namespace TopDownShooter
         {
             var worldRelativeMovementInput = GetWorldRelativeCappedMovementInput();
 
-            controller.Move(Time.fixedDeltaTime * runningSpeed * worldRelativeMovementInput);
+            var lateralVelocity = body.velocity;
+            lateralVelocity.y = 0f;
+            var newLateralVelocity = Vector3.MoveTowards(lateralVelocity, runningSpeed * worldRelativeMovementInput, Time.fixedDeltaTime * acceleration);
+            var newVelocity = newLateralVelocity + Vector3.up * body.velocity.y;
+
+            body.velocity = newVelocity;
         }
 
         private void RotateCharacter(Vector3 movementInputInWorldSpace)
@@ -51,10 +58,10 @@ namespace TopDownShooter
 
         private void RotateTowards(Vector3 newForward)
         {
-            var originalAngle = transform.eulerAngles.y;
+            var originalAngle = rotatableTransform.eulerAngles.y;
             var targetAngle = Mathf.Rad2Deg * Mathf.Atan2(newForward.x, newForward.z);
             var newAngle = Mathf.MoveTowardsAngle(originalAngle, targetAngle, rotationSpeed * Time.deltaTime);
-            transform.eulerAngles = Vector3.up * newAngle;
+            rotatableTransform.eulerAngles = Vector3.up * newAngle;
         }
 
         private Vector3 GetWorldRelativeCappedMovementInput()
