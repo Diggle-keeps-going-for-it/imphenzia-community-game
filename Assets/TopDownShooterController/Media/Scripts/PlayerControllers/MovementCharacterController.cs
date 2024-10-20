@@ -81,21 +81,6 @@ namespace TopDownShooter
             }
 
             RotateCharacter(worldRelativeMovementInput);
-
-            //gravity force
-            if (_velocity.y >= -MaxDownYVelocity)
-            {
-                _velocity.y += Gravity * Time.fixedDeltaTime;
-            }
-
-            _velocity.x /= 1 + DragForce.x * Time.fixedDeltaTime;
-            _velocity.y /= 1 + DragForce.y * Time.fixedDeltaTime;
-            _velocity.z /= 1 + DragForce.z * Time.fixedDeltaTime;
-
-            if (_controller.enabled)
-            {
-                _controller.Move(_velocity * Time.fixedDeltaTime);
-            }
         }
 
         private void RotateCharacter(Vector3 movementInputInWorldSpace)
