@@ -31,18 +31,24 @@ namespace TopDownShooter
             return Movement.y;
         }
 
-        public Vector2 GetLookDirection(Camera camera, Transform player)
+        public Vector3 GetWorldSpaceLookDirection(Camera camera, Transform player)
         {
             if (isUsingKeyboardAndMouse)
             {
                 var maybeMouseDirection = GetMouseDirection(camera, player);
-                if (maybeMouseDirection is Vector2 mouseDirection)
+                if (maybeMouseDirection is Vector3 mouseDirection)
                 {
                     return mouseDirection;
                 }
             }
 
-            return LookDirection;
+            var worldRight = camera.transform.right;
+            var worldForward = camera.transform.forward;
+            worldForward.y = 0f;
+            worldForward.Normalize();
+
+            var lookDirectionInWorldSpace = LookDirection.x * worldRight + LookDirection.y * worldForward;
+            return lookDirectionInWorldSpace;
         }
 
         public bool GetDropWeaponValue()
@@ -55,7 +61,7 @@ namespace TopDownShooter
             return Input.GetKeyDown(KeyCode.R);
         }
 
-        public Vector2? GetMouseDirection(Camera camera, Transform playerFeet)
+        public Vector3? GetMouseDirection(Camera camera, Transform playerFeet)
         {
             if (camera == null) return null;
 
@@ -68,7 +74,7 @@ namespace TopDownShooter
                 var hitPoint = mouseRay.GetPoint(groundHitDistance);
                 var playerToMouse = hitPoint - playerFeet.position;
 
-                return new Vector2(playerToMouse.x, playerToMouse.z);
+                return playerToMouse;
             }
 
             return null;

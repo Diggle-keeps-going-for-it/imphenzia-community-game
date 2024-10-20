@@ -101,10 +101,10 @@ namespace TopDownShooter
 
         private void RotateCharacter(Vector3 movementInputInWorldSpace)
         {
-            var lookDirection = PlayerController.GetLookDirection(Camera.main, transform);
+            var lookDirection = PlayerController.GetWorldSpaceLookDirection(Camera.main, transform);
             if (lookDirection.sqrMagnitude > lookDirectionDeadzone)
             {
-                RotateTowards(new Vector3(lookDirection.x, 0f, lookDirection.y));
+                RotateTowards(lookDirection);
                 return;
             }
 
