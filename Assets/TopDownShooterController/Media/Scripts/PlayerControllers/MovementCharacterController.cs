@@ -37,8 +37,6 @@ namespace TopDownShooter
         public PlayerController PlayerController;
 
         //Input.
-        public float Horizontal;
-        public float Vertical;
         public float Horizontal2;
         public float Vertical2;
 
@@ -65,7 +63,7 @@ namespace TopDownShooter
         private void Update()
         {
             //set running animation
-            SetRunningAnimation((Math.Abs(Horizontal) > 0 || Math.Abs(Vertical) > 0));
+            SetRunningAnimation(PlayerController.Movement.sqrMagnitude > 0);
         }
 
         private void FixedUpdate()
