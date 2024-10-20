@@ -17,7 +17,8 @@ namespace TopDownShooter
         private PlayerControls playerControls;
 
         public Vector2 Movement { get; private set; }
-        public Vector2 LookDirection { get; private set; }
+        private Vector2 LookDirection { get; set; }
+        private Vector2 CursorPosition { get; set; }
 
         private void Awake()
         {
@@ -98,7 +99,7 @@ namespace TopDownShooter
         {
             if (camera == null) return null;
 
-            var mouseRay = camera.ScreenPointToRay(Input.mousePosition);
+            var mouseRay = camera.ScreenPointToRay(CursorPosition);
             var planeAtFeet = new Plane(Vector3.up, playerFeet.position.y);
 
             //check if the player press mouse button and the ray hit the ground
@@ -121,6 +122,11 @@ namespace TopDownShooter
         public void OnLook(InputAction.CallbackContext context)
         {
             LookDirection = context.ReadValue<Vector2>();
+        }
+
+        public void OnCursorLook(InputAction.CallbackContext context)
+        {
+            CursorPosition = context.ReadValue<Vector2>();
         }
     }
 }

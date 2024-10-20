@@ -44,6 +44,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""CursorLook"",
+                    ""type"": ""Value"",
+                    ""id"": ""554bdbfe-81c0-415a-9fd8-f5ba2160e122"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -123,6 +132,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d0b77053-2ed3-4a35-8371-8e8d9c420fbf"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and mouse"",
+                    ""action"": ""CursorLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -161,6 +181,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Topdown = asset.FindActionMap("Top-down", throwIfNotFound: true);
         m_Topdown_Movement = m_Topdown.FindAction("Movement", throwIfNotFound: true);
         m_Topdown_Look = m_Topdown.FindAction("Look", throwIfNotFound: true);
+        m_Topdown_CursorLook = m_Topdown.FindAction("CursorLook", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -224,12 +245,14 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private List<ITopdownActions> m_TopdownActionsCallbackInterfaces = new List<ITopdownActions>();
     private readonly InputAction m_Topdown_Movement;
     private readonly InputAction m_Topdown_Look;
+    private readonly InputAction m_Topdown_CursorLook;
     public struct TopdownActions
     {
         private @PlayerControls m_Wrapper;
         public TopdownActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Topdown_Movement;
         public InputAction @Look => m_Wrapper.m_Topdown_Look;
+        public InputAction @CursorLook => m_Wrapper.m_Topdown_CursorLook;
         public InputActionMap Get() { return m_Wrapper.m_Topdown; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -245,6 +268,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
+            @CursorLook.started += instance.OnCursorLook;
+            @CursorLook.performed += instance.OnCursorLook;
+            @CursorLook.canceled += instance.OnCursorLook;
         }
 
         private void UnregisterCallbacks(ITopdownActions instance)
@@ -255,6 +281,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
+            @CursorLook.started -= instance.OnCursorLook;
+            @CursorLook.performed -= instance.OnCursorLook;
+            @CursorLook.canceled -= instance.OnCursorLook;
         }
 
         public void RemoveCallbacks(ITopdownActions instance)
@@ -294,5 +323,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
+        void OnCursorLook(InputAction.CallbackContext context);
     }
 }
