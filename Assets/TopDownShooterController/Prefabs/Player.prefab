@@ -36,7 +36,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1099744778298398159}
-  - {fileID: 4763173539692302}
   - {fileID: 6069119045850118006}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -247,6 +246,10 @@ MonoBehaviour:
   recoveryDuration: 0.5
   animationStartCastNormalizedTime: 0.36666667
   animationAttackExtremeNormalizedTime: 0.5
+  projectilePrefab: {fileID: 6752022923212627282, guid: 2aaf3962c0f7ef74f876f93456a568e4,
+    type: 3}
+  projectileLauncher: {fileID: 4763173539692302}
+  projectileLaunchSpeed: 5
 --- !u!1 &1739297284036844
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,12 +274,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739297284036844}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.117, y: 1.0100001, z: 0.856}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.1170001, y: 1.0100002, z: 0.85599995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4110713121089084}
+  m_Father: {fileID: 1099744778298398159}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1304947644593902616
 GameObject:
@@ -393,7 +396,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 136306802490482818, guid: ccd8c3b89aa02e943a08ab9238a8a70c, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4463868907105534, guid: ccd8c3b89aa02e943a08ab9238a8a70c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4763173539692302}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccd8c3b89aa02e943a08ab9238a8a70c, type: 3}
 --- !u!95 &1017712750233243903 stripped

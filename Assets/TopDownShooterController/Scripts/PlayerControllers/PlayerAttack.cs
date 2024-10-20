@@ -18,6 +18,10 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] [Range(0f, 1f)] private float animationStartCastNormalizedTime;
     [SerializeField] [Range(0f, 1f)] private float animationAttackExtremeNormalizedTime;
 
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Transform projectileLauncher;
+    [SerializeField] private float projectileLaunchSpeed = 1f;
+
     private bool isAttacking = false;
 
     public void TryAttack()
@@ -38,10 +42,23 @@ public class PlayerAttack : MonoBehaviour
         yield return PlayCast(startTime);
         var proportionOfRecoveryThatIsUninterruptible = recoveryDuration / recoveryAnimationDuration;
         var animationUninterruptibleRecoveryNormalizedTime = Mathf.Lerp(animationAttackExtremeNormalizedTime, 1f, proportionOfRecoveryThatIsUninterruptible);
+        SpawnProjectile();
         yield return PlayUninterruptibleRecovery(startTime, animationUninterruptibleRecoveryNormalizedTime);
         isAttacking = false;
         animator.SetTrigger(animatorEndAttackTriggerName);
         yield return PlayPostAttackRecoveryGameplay(startTime, animationUninterruptibleRecoveryNormalizedTime);
+    }
+
+    private void SpawnProjectile()
+    {
+        var projectileInstance = Instantiate(projectilePrefab, projectileLauncher.position, projectileLauncher.rotation);
+        var projectile = projectileInstance.GetComponent<Projectile>();
+        projectile.Initialize(projectileLauncher.position, CalculateProjectileInitialVelocity());
+    }
+
+    private Vector3 CalculateProjectileInitialVelocity()
+    {
+        return projectileLauncher.TransformVector(Vector3.forward * projectileLaunchSpeed);
     }
 
     private IEnumerator PlayWindup(float startTime)
