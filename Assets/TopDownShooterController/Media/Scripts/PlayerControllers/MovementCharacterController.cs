@@ -102,11 +102,6 @@ namespace TopDownShooter
             return worldRelativeMovementInput;
         }
 
-        public void ChangeSpeed(float speed)
-        {
-            RunningSpeed = speed;
-        }
-
         private void SetRunningAnimation(bool run)
         {
             PlayerAnimator.SetBool("Running", run);
