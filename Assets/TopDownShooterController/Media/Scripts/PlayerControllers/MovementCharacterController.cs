@@ -179,23 +179,6 @@ namespace TopDownShooter
             _controller.enabled = true;
         }
 
-        //dash coroutine.
-        private IEnumerator Dashing(float time)
-        {
-            CanControl = false;
-            if (!_controller.isGrounded)
-            {
-                Gravity = 0;
-                _velocity.y = 0;
-            }
-
-            //animate hear to true
-            yield return new WaitForSeconds(time);
-            CanControl = true;
-            //animate hear to false
-            Gravity = _gravity;
-        }
-
         #endregion
     }
 }
