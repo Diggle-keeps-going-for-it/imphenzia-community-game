@@ -166,19 +166,5 @@ namespace TopDownShooter
         }
 
         #endregion
-
-        #region Coroutine
-
-        //Use this to deactivate te player control for a period of time.
-        public IEnumerator DeactivatePlayerControlByTime(float time)
-        {
-            _controller.enabled = false;
-            CanControl = false;
-            yield return new WaitForSeconds(time);
-            CanControl = true;
-            _controller.enabled = true;
-        }
-
-        #endregion
     }
 }

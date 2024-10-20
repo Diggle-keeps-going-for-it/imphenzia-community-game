@@ -31,8 +31,6 @@ namespace TopDownShooter
         {
             if (other.CompareTag("Player"))
             {
-                StartCoroutine(other.GetComponent<MovementCharacterController>()
-                    .DeactivatePlayerControlByTime(TimeToControlPlayer));
                 StartCoroutine(TeleportPlayer(other.transform));
             }
         }
