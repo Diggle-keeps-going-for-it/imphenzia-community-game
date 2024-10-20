@@ -9,28 +9,8 @@ namespace TopDownShooter
         [Header("Player Controller Settings")] [Tooltip("Speed for the player.")]
         public float RunningSpeed = 5f;
 
-        [Header("Speed when player is shooting")] [Range(0.2f, 1)] [Tooltip("This is the proportion of normal player speed while shooting their weapon.")]
-        public float RunningShootSpeed;
-
-        [Tooltip("Slope angle limit to slide.")]
-        public float SlopeLimit = 45;
-
-        [Range(0.1f, 0.9f)]
-        public float SlideFriction = 0.3f;
-
-        [Range(0, -100)]
-        public float Gravity = -30f;
-
-        [Range(0, 100)]
-        public float MaxDownYVelocity = 15;
-
-        [Tooltip("Can the user control the player?")]
-        public bool CanControl = true;
-
         [SerializeField] [Range(0f, 1f)] private float lookDirectionDeadzone = 0.1f;
         [SerializeField] [Range(0f, 1f)] private float moveDirectionToLookDeadzone = 0f;
-
-        public Vector3 DragForce;
 
         public Animator PlayerAnimator;
 
