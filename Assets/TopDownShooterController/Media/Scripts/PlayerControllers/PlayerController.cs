@@ -46,26 +46,6 @@ namespace TopDownShooter
             return LookDirection;
         }
 
-        public bool GetGrabThrowValue()
-        {
-            return Input.GetButtonDown("GrabThrow");
-        }
-
-        public bool GetInteractValue()
-        {
-            return Input.GetButtonDown("Use");
-        }
-
-        public bool GetJumpValue()
-        {
-            return Input.GetKeyDown(KeyCode.Space);
-        }
-
-        public bool GetDashValue()
-        {
-            return Input.GetKeyDown(KeyCode.F);
-        }
-
         public bool GetDropWeaponValue()
         {
             return Input.GetKeyDown(KeyCode.G);
