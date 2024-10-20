@@ -119,12 +119,14 @@ namespace TopDownShooter
             if (lookDirection.sqrMagnitude > lookDirectionDeadzone)
             {
                 RotateTowards(new Vector3(lookDirection.x, 0f, lookDirection.y));
+                return;
             }
 
             var playerVelocity = new Vector3(PlayerController.GetHorizontalValue(), 0f, PlayerController.GetVerticalValue());
             if (playerVelocity.sqrMagnitude > moveDirectionToLookDeadzone)
             {
                 RotateTowards(playerVelocity);
+                return;
             }
         }
 
