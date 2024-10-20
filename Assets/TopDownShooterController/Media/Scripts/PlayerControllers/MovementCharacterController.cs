@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace TopDownShooter
 {
@@ -14,7 +15,7 @@ namespace TopDownShooter
 
         public Animator PlayerAnimator;
 
-        public PlayerController PlayerController;
+        [SerializeField] [FormerlySerializedAs("PlayerController")] private PlayerController playerController;
         [SerializeField] private CharacterController controller;
 
         [SerializeField] [Min(0f)] private float rotationSpeed = 360f;
@@ -23,7 +24,7 @@ namespace TopDownShooter
         {
             var worldRelativeMovementInput = GetWorldRelativeCappedMovementInput();
             RotateCharacter(worldRelativeMovementInput);
-            SetRunningAnimation(PlayerController.Movement.sqrMagnitude > 0);
+            SetRunningAnimation(playerController.Movement.sqrMagnitude > 0);
         }
 
         private void FixedUpdate()
@@ -35,7 +36,7 @@ namespace TopDownShooter
 
         private void RotateCharacter(Vector3 movementInputInWorldSpace)
         {
-            var lookDirection = PlayerController.GetWorldSpaceLookDirection(Camera.main, transform);
+            var lookDirection = playerController.GetWorldSpaceLookDirection(Camera.main, transform);
             if (lookDirection.sqrMagnitude > lookDirectionDeadzone)
             {
                 RotateTowards(lookDirection);
@@ -59,7 +60,7 @@ namespace TopDownShooter
 
         private Vector3 GetWorldRelativeCappedMovementInput()
         {
-            var rawMovementInput = new Vector2(PlayerController.GetHorizontalValue(), PlayerController.GetVerticalValue());
+            var rawMovementInput = new Vector2(playerController.GetHorizontalValue(), playerController.GetVerticalValue());
 
             if (rawMovementInput.sqrMagnitude == 0f)
             {
