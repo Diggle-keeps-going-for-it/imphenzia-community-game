@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e3968e200353f478615ea435d7be0d, type: 3}
   m_Name: Fireball Settings
   m_EditorClassIdentifier: 
-  gravityScale: 0.2
+  gravityScale: 0
   radius: 0.2
   layerMask:
     serializedVersion: 2
