@@ -76,7 +76,7 @@ public class Projectile : MonoBehaviour
 
     private void SpawnExplosionAtImpact(Vector3 hitPoint, Vector3 hitNormal)
     {
-        var hitNormalRotation = Quaternion.AngleAxis(UnityEngine.Random.Range(0f, 360f), Vector3.up) * Quaternion.LookRotation(hitNormal);
+        var hitNormalRotation = Quaternion.AngleAxis(UnityEngine.Random.Range(0f, 360f), Vector3.forward) * Quaternion.LookRotation(hitNormal);
         Instantiate(settings.ImpactObject, hitPoint, hitNormalRotation);
     }
 
