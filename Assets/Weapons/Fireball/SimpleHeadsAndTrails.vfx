@@ -395,7 +395,7 @@ MonoBehaviour:
   integration: 0
   angularIntegration: 0
   ageParticles: 1
-  reapParticles: 1
+  reapParticles: 0
   skipZeroDeltaUpdate: 0
 --- !u!114 &114920711487922656
 MonoBehaviour:
@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 114131763552434164}
-  m_UIPosition: {x: 709, y: 140}
+  m_UIPosition: {x: 709, y: 139}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -3251,7 +3251,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 2
+      m_SerializableObject: 4
     m_Space: 2147483647
   m_Property:
     name: Size
