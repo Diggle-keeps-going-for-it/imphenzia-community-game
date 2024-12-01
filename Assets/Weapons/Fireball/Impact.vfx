@@ -24,34 +24,13 @@ MonoBehaviour:
     - model: {fileID: 8926484042661614558}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661614580}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661614583}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614555}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661614606}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661614585}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614589}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661615122}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614591}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614613}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614593}
       id: 0
       isStickyNote: 0
   - title: Cross
@@ -74,13 +53,13 @@ MonoBehaviour:
     - model: {fileID: 8926484042661614652}
       id: 0
       isStickyNote: 0
-  - title: Flash
+  - title: Decal
     position:
       serializedVersion: 2
-      x: 4521
-      y: -166
+      x: 4475
+      y: -115
       width: 474
-      height: 1393
+      height: 1685
     contents:
     - model: {fileID: 8926484042661614762}
       id: 0
@@ -100,7 +79,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -750
     y: -277
-    width: 5745
+    width: 5699
     height: 2330
 --- !u!114 &114350483966674976
 MonoBehaviour:
@@ -4505,7 +4484,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614763}
   - {fileID: 8926484042661614810}
   - {fileID: 8926484042661615116}
-  m_UIPosition: {x: 4546, y: 268}
+  m_UIPosition: {x: 4500, y: 319}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -5071,7 +5050,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 4546, y: 772}
+  m_UIPosition: {x: 4500, y: 823}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -5107,7 +5086,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614783}
-  m_UIPosition: {x: 4546, y: -107}
+  m_UIPosition: {x: 4500, y: -56}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -5293,7 +5272,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614817}
   - {fileID: 8926484042661615251}
   - {fileID: 8926484042661614823}
-  m_UIPosition: {x: 4546, y: 928}
+  m_UIPosition: {x: 4500, y: 979}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -5420,7 +5399,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":-90.0,"y":0.0,"z":0.0}'
+      m_SerializableObject: '{"x":0.0,"y":0.0,"z":0.0}'
     m_Space: 2147483647
   m_Property:
     name: Angle
