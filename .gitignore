@@ -62,6 +62,9 @@ Assets/StreamingAssets/crashlytics-build.properties
 # Log files can be ignored.
 fmod_editor.log
 
+# Unity VFX
+GraphViz/
+
 # other FMOD files
 FMOD/**/.cache
 FMOD/**/.unsaved
