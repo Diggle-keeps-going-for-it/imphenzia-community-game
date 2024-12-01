@@ -13,4 +13,7 @@ public class ProjectileSettings : ScriptableObject
 
     [SerializeField] private LayerMask layerMask;
     public LayerMask LayerMask => layerMask;
+
+    [SerializeField] private GameObject impactObject;
+    public GameObject ImpactObject => impactObject;
 }

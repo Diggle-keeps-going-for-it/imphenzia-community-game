@@ -59,17 +59,25 @@ public class Projectile : MonoBehaviour
         if (Physics.SphereCast(nextPosition, settings.Radius, velocity, out var hitInfo, velocity.magnitude, settings.LayerMask))
         {
             var hitPoint = nextPosition + velocity.normalized * hitInfo.distance;
-            Explode(hitPoint);
+            Explode(hitPoint, hitInfo.normal);
             Destroy(gameObject, timeToKillAfterProjectileStopped);
+            this.enabled = false;
             return true;
         }
 
         return false;
     }
 
-    private void Explode(Vector3 hitPoint)
+    private void Explode(Vector3 hitPoint, Vector3 hitNormal)
     {
         onProjectileStopped?.Invoke();
+        SpawnExplosionAtImpact(hitPoint, hitNormal);
+    }
+
+    private void SpawnExplosionAtImpact(Vector3 hitPoint, Vector3 hitNormal)
+    {
+        var hitNormalRotation = Quaternion.AngleAxis(UnityEngine.Random.Range(0f, 360f), Vector3.up) * Quaternion.LookRotation(hitNormal);
+        Instantiate(settings.ImpactObject, hitPoint, hitNormalRotation);
     }
 
     private void UpdateVelocity()
