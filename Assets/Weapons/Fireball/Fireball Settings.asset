@@ -17,3 +17,5 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  impactObject: {fileID: 8299499686547473265, guid: f987f0b12358e0e47b35e15605e181df,
+    type: 3}
