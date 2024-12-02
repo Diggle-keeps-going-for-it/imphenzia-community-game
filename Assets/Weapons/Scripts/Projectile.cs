@@ -62,6 +62,7 @@ public class Projectile : MonoBehaviour
             Explode(hitPoint, hitInfo.normal);
             Destroy(gameObject, timeToKillAfterProjectileStopped);
             this.enabled = false;
+            transform.position = hitPoint;
             return true;
         }
 
