@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5206236391538176329}
   - component: {fileID: 2135741943140081407}
   - component: {fileID: 8973111287067327439}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FireballEmber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 5658625479330067323}
   - component: {fileID: 1647274025183952194}
   - component: {fileID: 8929579394519884680}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2111555082769159207}
   - component: {fileID: 5849769302450165541}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Physics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
