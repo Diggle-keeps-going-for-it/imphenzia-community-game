@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5206236391538176329}
   - component: {fileID: 2135741943140081407}
+  - component: {fileID: 8973111287067327439}
   m_Layer: 0
   m_Name: FireballEmber
   m_TagString: Untagged
@@ -61,6 +62,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8973111287067327439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318077927493531364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2a105bbd1c5b84f8861462c871d15f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeout: {x: 0.15, y: 0.95}
+  minimumSpeed: 1
+  visualEffect: {fileID: 5658625479330067323}
+  visualEffectIsEmittingProperty: Should Emit
+  body: {fileID: 2135741943140081407}
+  killToDestroyDelay: 1
 --- !u!1 &6530304971371444088
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +141,10 @@ VisualEffect:
     m_Vector2f:
       m_Array: []
     m_Vector3f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 0, y: 5, z: 0}
+        m_Name: Gravity
+        m_Overridden: 1
     m_Vector4f:
       m_Array: []
     m_Uint:
