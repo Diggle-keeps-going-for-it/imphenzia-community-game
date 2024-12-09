@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4425034920027282684}
   - component: {fileID: 3427582986032060108}
   - component: {fileID: 881481333911422065}
+  - component: {fileID: 6806446931208703590}
   m_Layer: 0
   m_Name: Decal
   m_TagString: Untagged
@@ -55,7 +56,7 @@ MonoBehaviour:
   m_DecalLayerMask: 1
   m_ScaleMode: 0
   m_Offset: {x: 0, y: 0, z: 0.25}
-  m_Size: {x: 1, y: 1, z: 0.5}
+  m_Size: {x: 1.5, y: 1.5, z: 0.5}
   m_FadeFactor: 1
 --- !u!114 &881481333911422065
 MonoBehaviour:
@@ -75,15 +76,15 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0.4988098
-      inSlope: 7.426471
-      outSlope: 7.426471
+      inSlope: 12.459176
+      outSlope: 12.459176
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.08861641
+      outWeight: 0.0773933
     - serializedVersion: 3
-      time: 0.10401216
-      value: 0.99343103
+      time: 0.022587586
+      value: 1
       inSlope: -0.003263323
       outSlope: -0.003263323
       tangentMode: 0
@@ -91,8 +92,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.192901
     - serializedVersion: 3
-      time: 0.56607056
-      value: 0.9952736
+      time: 0.49063694
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -100,13 +101,13 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.9900249
-      value: 0.40189123
-      inSlope: -2.5944982
-      outSlope: -2.5944982
+      time: 0.9993634
+      value: 0.3876953
+      inSlope: -2.8513343
+      outSlope: -2.8513343
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.111107476
+      inWeight: 0.05388755
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -124,29 +125,49 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.68827933
+      time: 0.26078796
       value: 1
-      inSlope: -0
-      outSlope: -0
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.21877472
     - serializedVersion: 3
-      time: 1.0024929
+      time: 0.9949856
       value: 0
-      inSlope: -7.313422
+      inSlope: -1.3620311
       outSlope: -7.313422
-      tangentMode: 0
+      tangentMode: 5
       weightedMode: 0
       inWeight: 0.055553038
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  duration: 3
   decal: {fileID: 3427582986032060108}
-  scalePropertyName: _Scale
   alphaPropertyName: _Alpha
+--- !u!114 &6806446931208703590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6243739889695796933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8169df70140bd7f42bb679f2a984875f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionList:
+    conditions: []
+  point: {x: 0, y: 0, z: 0}
+  axis: {x: 0, y: 0, z: 1}
+  min: -180
+  max: 180
+  dispersionMin: 0
+  dispersionMax: 5
 --- !u!1 &8299499686547473265
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389828d5384bf0146b254acce1d22a1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 2
+  delay: 3
 --- !u!1 &8691197870232363872
 GameObject:
   m_ObjectHideFlags: 0
