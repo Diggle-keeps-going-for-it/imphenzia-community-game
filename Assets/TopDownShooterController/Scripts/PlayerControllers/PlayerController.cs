@@ -51,16 +51,6 @@ namespace TopDownShooter
             return lookDirectionInWorldSpace;
         }
 
-        public bool GetDropWeaponValue()
-        {
-            return Input.GetKeyDown(KeyCode.G);
-        }
-
-        public bool GetReloadWeaponValue()
-        {
-            return Input.GetKeyDown(KeyCode.R);
-        }
-
         public Vector3? GetMouseDirection(Camera camera, Transform playerFeet)
         {
             if (camera == null) return null;
