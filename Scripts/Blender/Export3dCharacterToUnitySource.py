@@ -4,7 +4,7 @@ import bpy
 import bmesh
 import mathutils
 import math
-from collections import namedtuple
+from dataclasses import dataclass
 
 import sys
 import logging
@@ -15,7 +15,9 @@ from argparse import ArgumentParser
 from typing import List, Any, Callable, Iterable
 
 
-ExportableModels = namedtuple('ExportableModels', ['model', 'armature'])
+@dataclass
+class ExportableModels:
+    objects : list[bpy.types.Object]
 
 
 def main(output_path : str) -> None:
@@ -32,6 +34,8 @@ def main(output_path : str) -> None:
 
     logging.info('beginning export')
     exportable_models = prepare_for_export()
+    model_names = ', '.join((model.name for model in exportable_models.objects))
+    logging.info(f'exporting models {model_names}')
     export(exportable_models, output_path)
     logging.info('export complete')
 
@@ -41,19 +45,20 @@ def prepare_for_export() -> ExportableModels:
     character_armatures = get_character_armatures()
     arm_names = ', '.join((arm.name for arm in character_armatures))
     assert len(character_armatures) > 0, 'Could not find any armatures in the scene. Use \'export prop\' to export static meshes.'
-    assert len(character_armatures) == 1, f'The script only supports one armature at a time at the moment. Split other armatures into separate files or update the script to handle more armatures. Armatures were {arm_names}'
+    assert len(character_armatures) == 1, f'The script only supports one armature at a time. Split other armatures into separate files or update the script to handle more armatures. Armatures were {arm_names}'
     character_armature = character_armatures[0]
-    character_mesh_object = get_character_mesh(character_armature)
-    world_objects = ExportableModels(character_mesh_object, character_armature)
+    character_mesh_objects = get_character_meshes(character_armature)
+    world_objects = ExportableModels(character_mesh_objects + [character_armature])
     return world_objects
 
 
-def get_character_mesh(armature : bpy.types.Object) -> bpy.types.Object:
+def get_character_meshes(armature : bpy.types.Object) -> list[bpy.types.Object]:
+    meshes = []
     for child in armature.children:
         if type(child.data) == bpy.types.Mesh:
-            return child
-    assert False, f'Unable to find child mesh under {armature.name}.'
-    return None
+            meshes.append(child)
+    assert len(meshes) > 0, f'Unable to find child mesh under {armature.name}.'
+    return meshes
 
 
 def get_character_armatures() -> List[bpy.types.Object]:
@@ -85,7 +90,7 @@ def recursively_make_collections_visible(root_collection : bpy.types.LayerCollec
 
 
 def export(models : ExportableModels, output_path : str) -> None:
-    exportable_models = [models.model, models.armature]
+    exportable_models = models.objects
     logging.info(f'exporting to {output_path}...')
 
     bpy.ops.object.select_all(action='DESELECT')
