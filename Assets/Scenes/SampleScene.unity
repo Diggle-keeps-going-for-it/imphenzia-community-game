@@ -346,6 +346,98 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 329568868a5548d489e948bcd0616a97, type: 3}
+--- !u!1001 &475240203
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.221
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.106
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.10382444
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.99459565
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -168.081
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7224280336077963625, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1618221112257040607, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_Name
+      value: CommunityGame_GoblinRaider (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2149527781930828920, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037452478792634895, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 930463522903833020, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1490725125}
+  m_SourcePrefab: {fileID: 100100000, guid: 86e22005816662140881a64741eaf8dd, type: 3}
 --- !u!1 &654273042
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,6 +556,125 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &678378736 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 930463522903833020, guid: 86e22005816662140881a64741eaf8dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 726714883}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &678378738
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678378736}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aa20d1487a4bb6c4ea536f4443ee2f57, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &726714883
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.976
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.764
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8582733
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5131929
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 61.753
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7224280336077963625, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1618221112257040607, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_Name
+      value: CommunityGame_GoblinRaider (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2149527781930828920, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037452478792634895, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 930463522903833020, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 678378738}
+  m_SourcePrefab: {fileID: 100100000, guid: 86e22005816662140881a64741eaf8dd, type: 3}
 --- !u!1001 &795300010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -581,6 +792,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &835233797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 930463522903833020, guid: 86e22005816662140881a64741eaf8dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1772259529}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &835233799
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835233797}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aa20d1487a4bb6c4ea536f4443ee2f57, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &894387933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -639,10 +877,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.85463727
       objectReference: {fileID: 0}
+    - target: {fileID: -7224280336077963625, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 86e22005816662140881a64741eaf8dd,
         type: 3}
       propertyPath: m_Name
       value: CommunityGame_GoblinRaider
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037452478792634895, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -828,6 +1076,120 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9dc6efd48b81a54ea6a8558f7fe9948, type: 3}
+--- !u!1 &1490725123 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 930463522903833020, guid: 86e22005816662140881a64741eaf8dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 475240203}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1490725125
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490725123}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aa20d1487a4bb6c4ea536f4443ee2f57, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &1772259529
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.141
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.217
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9435155
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.33132848
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -38.699
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7224280336077963625, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1618221112257040607, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_Name
+      value: CommunityGame_GoblinRaider (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037452478792634895, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 930463522903833020, guid: 86e22005816662140881a64741eaf8dd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 835233799}
+  m_SourcePrefab: {fileID: 100100000, guid: 86e22005816662140881a64741eaf8dd, type: 3}
 --- !u!1 &1875387299 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 930463522903833020, guid: 86e22005816662140881a64741eaf8dd,
@@ -842,7 +1204,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875387299}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: aa20d1487a4bb6c4ea536f4443ee2f57, type: 2}
   m_CullingMode: 0
@@ -921,3 +1283,6 @@ SceneRoots:
   - {fileID: 795300010}
   - {fileID: 1471615870}
   - {fileID: 894387933}
+  - {fileID: 726714883}
+  - {fileID: 1772259529}
+  - {fileID: 475240203}
